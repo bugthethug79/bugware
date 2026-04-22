@@ -92,9 +92,7 @@ const PROGRAMS = [
         "name": "Rivals",
         "prices": {
           "Rage": "$10.00",
-          "Legit": "$5.00",
-          "Closet": "$5.00",
-          "Blatant": "5.00"
+          "Legit": "$5.00"
         }
       }
     ]
@@ -107,6 +105,24 @@ const PROGRAMS = [
         "prices": {
           "Lifetime": "$10.00",
           "Monthly": "$5.00"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Scripts",
+    "games": [
+      {
+        "name": "Bugware Premium",
+        "prices": {
+          "Lifetime": "$10.00",
+          "Monthly": "$5.00"
+        }
+      },
+      {
+        "name": "Bugware Private",
+        "prices": {
+          "Lifetime": "Contact Staff"
         }
       }
     ]
