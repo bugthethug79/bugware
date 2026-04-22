@@ -1,0 +1,19 @@
+{
+  "reviews": [
+    {
+      "username": "User123",
+      "rating": 5,
+      "message": "Amazing product. Configs feel super clean and the support team responded in minutes."
+    },
+    {
+      "username": "CoolGuy",
+      "rating": 4,
+      "message": "Works as expected. Smooth setup and the legit config is genuinely undetectable."
+    },
+    {
+      "username": "ZephyrRBX",
+      "rating": 5,
+      "message": "Best Matcha configs I've used. Worth every dollar."
+    }
+  ]
+}

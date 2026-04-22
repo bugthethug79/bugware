@@ -103,6 +103,65 @@ PROGRAMS.forEach(prog => {
   grid.appendChild(card);
 });
 
+// ── REVIEWS ──────────────────────────────────────────────
+const STAR_SRC = 'assets/extras/reviewstar.png';
+
+function renderStars(n, total = 5) {
+  let html = '';
+  for (let i = 0; i < total; i++) {
+    const filled = i < n ? 'filled' : 'empty';
+    html += `<img src="${STAR_SRC}" alt="" class="star ${filled}" onerror="this.style.display='none'" />`;
+  }
+  return html;
+}
+
+fetch('reviews.json', { cache: 'no-store' })
+  .then(r => r.json())
+  .then(data => {
+    const list = (data.reviews || []).filter(r => r && typeof r.rating === 'number');
+    const grid = document.getElementById('reviewsGrid');
+    const summary = document.getElementById('reviewsSummary');
+    if (!grid || !summary) return;
+
+    if (!list.length) {
+      summary.innerHTML = `<div class="rs-empty">No reviews yet.</div>`;
+      return;
+    }
+
+    const total = list.length;
+    const avg = list.reduce((s, r) => s + r.rating, 0) / total;
+    const avgRounded = Math.round(avg);
+
+    summary.innerHTML = `
+      <div class="rs-num">${avg.toFixed(1)}<span>/5</span></div>
+      <div class="rs-meta">
+        <div class="rs-stars">${renderStars(avgRounded)}</div>
+        <div class="rs-count">${total} ${total === 1 ? 'review' : 'reviews'}</div>
+      </div>
+    `;
+
+    grid.innerHTML = list.map(r => `
+      <div class="review">
+        <div class="review-head">
+          <span class="review-name">${escapeHTML(r.username || 'Anonymous')}</span>
+          <span class="review-stars">${renderStars(r.rating)}</span>
+        </div>
+        <p class="review-msg">${escapeHTML(r.message || '')}</p>
+      </div>
+    `).join('');
+  })
+  .catch(err => {
+    console.error('Failed to load reviews:', err);
+    const summary = document.getElementById('reviewsSummary');
+    if (summary) summary.innerHTML = `<div class="rs-empty">Reviews unavailable.</div>`;
+  });
+
+function escapeHTML(str) {
+  return String(str).replace(/[&<>"']/g, c => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[c]));
+}
+
 function toggle(btn) {
   const isOpen = btn.classList.contains('open');
   const card = btn.closest('.prog');
