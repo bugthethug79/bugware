@@ -4,6 +4,7 @@
 //  Add/remove objects inside `games` to add/remove games.
 //  Add/remove objects inside PROGRAMS to add/remove clients.
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 const PROGRAMS = [
   {
     "name": "Matcha",
@@ -39,6 +40,61 @@ const PROGRAMS = [
           "Semi Blatant": "$5.00",
           "Blatant": "$5.00",
           "Legit Silent": "$5.00"
+        }
+      },
+      {
+        "name": "BloxStrike",
+        "prices": {
+          "Legit": "$5.00",
+          "Semi Legit": "$5.00",
+          "Closet": "$5.00",
+          "Semi Blatant": "$5.00",
+          "Blatant": "$5.00",
+          "Config Pack": "$18.00"
+        }
+      },
+      {
+        "name": "Operation One",
+        "prices": {
+          "Legit": "$5.00",
+          "Semi Legit": "$5.00",
+          "Closet": "$5.00",
+          "Semi Blatant": "$5.00",
+          "Blatant": "$5.00",
+          "Config Pack": "$18.00"
+        }
+      },
+      {
+        "name": "Sniper Duels",
+        "prices": {
+          "Legit": "$5.00",
+          "Semi Legit": "$5.00",
+          "Closet": "$5.00",
+          "Semi Blatant": "$5.00",
+          "Blatant": "$5.00",
+          "Config Pack": "$18.00"
+        }
+      },
+      {
+        "name": "Hypershot",
+        "prices": {
+          "Legit": "$5.00",
+          "Semi Legit": "$5.00",
+          "Closet": "$5.00",
+          "Semi Blatant": "$5.00",
+          "Blatant": "$5.00",
+          "Config Pack": "$18.00"
+        }
+      },
+      {
+        "name": "Criminality",
+        "prices": {
+          "Legit": "$5.00",
+          "Semi Legit": "$5.00",
+          "Closet": "$5.00",
+          "Semi Blatant": "$5.00",
+          "Blatant": "$5.00",
+          "Config Pack": "$18.00"
         }
       }
     ]
@@ -79,6 +135,17 @@ const PROGRAMS = [
           "Semi Blatant": "$5.00",
           "Blatant": "$5.00",
           "Legit Silent": "$5.00"
+        }
+      },
+      {
+        "name": "Operation One",
+        "prices": {
+          "Legit": "$5.00",
+          "Semi Legit": "$5.00",
+          "Closet": "$5.00",
+          "Semi Blatant": "$5.00",
+          "Blatant": "$5.00",
+          "Config Pack": "$18.00"
         }
       }
     ]
@@ -139,6 +206,7 @@ const PROGRAMS = [
     ]
   }
 ];
+
 // ── RENDER ────────────────────────────────────────────────
 const grid = document.getElementById('progGrid');
 
