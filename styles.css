@@ -28,7 +28,28 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Single seamless monotone backdrop — same across the entire page */
+/* Animated topographic backdrop — slowly drifting, monotone */
+body::after {
+  content: '';
+  position: fixed;
+  inset: -10% -10%;
+  background-image: url('/assets/topo.png');
+  background-repeat: repeat;
+  background-size: 720px 720px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.06;
+  filter: invert(1) grayscale(1) contrast(1.05);
+  mix-blend-mode: screen;
+  animation: topoDrift 60s linear infinite;
+  will-change: background-position;
+}
+@keyframes topoDrift {
+  from { background-position: 0 0; }
+  to   { background-position: 720px 720px; }
+}
+
+/* Single seamless monotone glow — same across the entire page */
 body::before {
   content: '';
   position: fixed; inset: 0;
@@ -36,7 +57,12 @@ body::before {
     radial-gradient(ellipse 70% 50% at 85% 20%, rgba(255,255,255,0.05) 0%, transparent 60%),
     radial-gradient(ellipse 60% 40% at 15% 80%, rgba(255,255,255,0.035) 0%, transparent 60%);
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
+}
+.wrap, nav { position: relative; z-index: 2; }
+
+@media (prefers-reduced-motion: reduce) {
+  body::after { animation: none; }
 }
 
 /* ── NAV ── */
