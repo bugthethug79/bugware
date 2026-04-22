@@ -5,419 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bugware | Premium Configs</title>
   <link rel="icon" href="/assets/logo.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg:      #0b0b0b;
-      --bg2:     #0f0f0f;
-      --panel:   #161616;
-      --panel2:  #1b1b1b;
-      --border:  rgba(255,255,255,0.07);
-      --border2: rgba(255,255,255,0.12);
-      --text:    #f0f0f0;
-      --muted:   #888;
-      --faint:   #444;
-      --white:   #fff;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Sora', sans-serif;
-      font-weight: 400;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: '';
-      position: fixed; inset: 0;
-      background: radial-gradient(ellipse 90% 45% at 50% 0%, rgba(255,255,255,0.04) 0%, transparent 60%);
-      pointer-events: none; z-index: 0;
-    }
-
-    /* ── AMBIENT GLOW SPOTS ── */
-    .glows {
-      position: fixed; inset: 0;
-      pointer-events: none; z-index: 0;
-      overflow: hidden;
-    }
-    .glow {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(110px);
-      will-change: transform, opacity;
-      mix-blend-mode: screen;
-    }
-    .glow-1 {
-      width: 620px; height: 620px;
-      top: -160px; left: -180px;
-      background: radial-gradient(circle, rgba(120, 95, 255, 0.38), transparent 70%);
-      animation: drift1 22s ease-in-out infinite;
-    }
-    .glow-2 {
-      width: 540px; height: 540px;
-      top: 18%; right: -200px;
-      background: radial-gradient(circle, rgba(70, 200, 255, 0.3), transparent 70%);
-      animation: drift2 26s ease-in-out infinite;
-    }
-    .glow-3 {
-      width: 500px; height: 500px;
-      top: 55%; left: 8%;
-      background: radial-gradient(circle, rgba(180, 80, 255, 0.26), transparent 70%);
-      animation: drift3 28s ease-in-out infinite;
-    }
-    .glow-4 {
-      width: 560px; height: 560px;
-      bottom: -220px; right: 6%;
-      background: radial-gradient(circle, rgba(80, 255, 200, 0.22), transparent 70%);
-      animation: drift4 24s ease-in-out infinite;
-    }
-    .glow-5 {
-      width: 420px; height: 420px;
-      top: 38%; left: 42%;
-      background: radial-gradient(circle, rgba(255, 120, 200, 0.18), transparent 70%);
-      animation: drift2 30s ease-in-out infinite reverse;
-    }
-
-    @keyframes drift1 {
-      0%,100% { transform: translate(0,0) scale(1); }
-      50%     { transform: translate(60px,-40px) scale(1.08); }
-    }
-    @keyframes drift2 {
-      0%,100% { transform: translate(0,0) scale(1); }
-      50%     { transform: translate(-70px,50px) scale(1.1); }
-    }
-    @keyframes drift3 {
-      0%,100% { transform: translate(0,0) scale(1); }
-      50%     { transform: translate(50px,-60px) scale(1.06); }
-    }
-    @keyframes drift4 {
-      0%,100% { transform: translate(0,0) scale(1); }
-      50%     { transform: translate(-40px,-30px) scale(1.12); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .glow { animation: none !important; }
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 52px; height: 64px;
-      background: rgba(11,11,11,0.84);
-      backdrop-filter: blur(24px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-logo {
-      display: flex; align-items: center; gap: 10px;
-      text-decoration: none;
-    }
-    .nav-logo img {
-      width: 28px; height: 28px;
-      object-fit: contain; border-radius: 50%;
-    }
-    .nav-logo-name {
-      font-size: 16px; font-weight: 700;
-      color: var(--white); letter-spacing: -0.3px;
-    }
-    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-    .nav-links a {
-      color: var(--muted); text-decoration: none;
-      font-size: 13.5px; font-weight: 400;
-      transition: color 0.15s;
-    }
-    .nav-links a:hover { color: var(--white); }
-    .nav-cta {
-      background: var(--white) !important;
-      color: #000 !important;
-      padding: 8px 18px; border-radius: 100px;
-      font-size: 13px !important; font-weight: 600 !important;
-      transition: background 0.15s, transform 0.15s !important;
-    }
-    .nav-cta:hover { background: #e0e0e0 !important; transform: translateY(-1px); }
-
-    /* ── WRAP ── */
-    .wrap { position: relative; z-index: 1; }
-
-    /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center; padding: 130px 40px 100px;
-    }
-
-    .hero-chip {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--border2);
-      border-radius: 100px; padding: 6px 16px;
-      font-size: 11.5px; color: var(--muted);
-      letter-spacing: 0.3px; font-weight: 500;
-      margin-bottom: 36px;
-      animation: up .6s ease both;
-    }
-    .chip-dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: #4dffaa; box-shadow: 0 0 7px #4dffaa;
-      animation: blink 2.5s ease-in-out infinite; flex-shrink: 0;
-    }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
-
-    .hero-logo {
-      width: 80px; height: 80px; object-fit: contain; border-radius: 50%;
-      margin-bottom: 28px;
-      animation: up .6s .04s ease both, bob 5s ease-in-out infinite;
-      filter: drop-shadow(0 10px 36px rgba(170, 140, 255, 0.35)) drop-shadow(0 0 22px rgba(120, 95, 255, 0.25));
-    }
-    @keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
-
-    .hero h1 {
-      font-size: clamp(46px, 7vw, 92px);
-      font-weight: 800; line-height: 1.0;
-      letter-spacing: -3px; color: var(--white);
-      margin-bottom: 6px;
-      animation: up .6s .08s ease both;
-    }
-    .hero h1 span { color: var(--muted); font-weight: 300; }
-
-    .hero-tagline {
-      font-size: clamp(13.5px, 1.5vw, 17px);
-      color: var(--muted); font-weight: 400;
-      letter-spacing: 0; margin-bottom: 16px;
-      animation: up .6s .12s ease both;
-    }
-    .hero-body {
-      max-width: 480px; font-size: 15px;
-      color: var(--faint); line-height: 1.8;
-      margin-bottom: 40px;
-      animation: up .6s .16s ease both;
-    }
-    .hero-btns {
-      display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
-      animation: up .6s .2s ease both;
-    }
-
-    .btn {
-      display: inline-flex; align-items: center; gap: 7px;
-      padding: 11px 24px; border-radius: 100px;
-      font-family: 'Sora', sans-serif;
-      font-size: 13.5px; font-weight: 600;
-      text-decoration: none; cursor: pointer; border: none;
-      transition: all 0.18s;
-    }
-    .btn-solid { background: var(--white); color: #000; }
-    .btn-solid:hover { background: #e4e4e4; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,255,255,0.09); }
-    .btn-stroke {
-      background: transparent; color: var(--muted);
-      border: 1px solid var(--border2);
-    }
-    .btn-stroke:hover { color: var(--white); border-color: rgba(255,255,255,0.22); transform: translateY(-2px); }
-
-    /* stats */
-    .stats {
-      display: flex; margin-top: 60px;
-      background: var(--panel); border: 1px solid var(--border);
-      border-radius: 18px; overflow: hidden;
-      animation: up .6s .24s ease both;
-    }
-    .s { flex: 1; padding: 20px 22px; text-align: center; border-right: 1px solid var(--border); }
-    .s:last-child { border-right: none; }
-    .s-n { font-size: 26px; font-weight: 700; color: var(--white); line-height: 1; margin-bottom: 5px; }
-    .s-l { font-size: 10.5px; color: var(--faint); letter-spacing: 1px; text-transform: uppercase; font-weight: 500; }
-
-    @keyframes up { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
-
-    /* ── SECTION SHARED ── */
-    .sec { padding: 104px 0; }
-    .container { max-width: 1120px; margin: 0 auto; padding: 0 44px; }
-    .sec-tag { font-size: 10.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--faint); font-weight: 600; margin-bottom: 10px; }
-    .sec-h { font-size: clamp(26px, 3.8vw, 42px); font-weight: 700; line-height: 1.1; letter-spacing: -1px; color: var(--white); margin-bottom: 12px; }
-    .sec-p { color: var(--muted); font-size: 15px; line-height: 1.78; max-width: 440px; font-weight: 400; }
-
-    /* ── FEATURES ── */
-    .feat-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1px; background: var(--border);
-      border: 1px solid var(--border); border-radius: 22px;
-      overflow: hidden; margin-top: 48px;
-    }
-    .feat {
-      background: var(--panel); padding: 32px 28px;
-      transition: background .2s;
-    }
-    .feat:hover { background: var(--panel2); }
-    .feat-ico {
-      width: 36px; height: 36px;
-      border-radius: 10px; overflow: hidden;
-      margin-bottom: 18px;
-      background: rgba(255,255,255,0.04);
-      display: flex; align-items: center; justify-content: center;
-    }
-    .feat-ico img {
-      width: 36px; height: 36px;
-      object-fit: contain;
-      opacity: 0.75;
-      filter: grayscale(1) brightness(2);
-    }
-    .feat-t { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 7px; letter-spacing: -0.2px; }
-    .feat-d { color: var(--muted); font-size: 13.5px; line-height: 1.65; font-weight: 400; }
-
-    /* ── CONFIGS ── */
-    .configs-sec { background: var(--bg2); }
-    .configs-sec .inner { padding: 104px 44px; max-width: 1120px; margin: 0 auto; }
-    .configs-head { margin-bottom: 40px; }
-
-    .prog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(252px, 1fr));
-      gap: 12px;
-    }
-
-    .prog {
-      background: var(--panel); border: 1px solid var(--border);
-      border-radius: 20px; overflow: hidden;
-      transition: border-color .2s, box-shadow .2s, transform .2s;
-    }
-    .prog:hover {
-      border-color: var(--border2);
-      box-shadow: 0 8px 40px rgba(0,0,0,0.5), 0 0 48px rgba(140, 110, 255, 0.12);
-      transform: translateY(-2px);
-    }
-
-    .prog-head {
-      padding: 18px 20px 16px;
-      border-bottom: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .prog-name { font-size: 16px; font-weight: 700; color: var(--white); letter-spacing: -0.3px; }
-    .prog-badge {
-      font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase;
-      color: var(--faint); background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border); padding: 3px 9px; border-radius: 100px;
-      font-weight: 600;
-    }
-
-    .games { padding: 2px 0; }
-    .game { border-bottom: 1px solid var(--border); }
-    .game:last-child { border-bottom: none; }
-
-    .game-btn {
-      width: 100%; display: flex; align-items: center; justify-content: space-between;
-      padding: 13px 20px; background: none; border: none; cursor: pointer;
-      color: var(--muted); font-family: 'Sora', sans-serif;
-      font-size: 13.5px; font-weight: 400;
-      transition: color .15s, background .15s; text-align: left;
-    }
-    .game-btn:hover { color: var(--white); background: rgba(255,255,255,0.02); }
-    .game-btn.open { color: var(--white); font-weight: 500; }
-
-    .chev {
-      width: 14px; height: 14px; flex-shrink: 0;
-      color: var(--faint);
-      transition: transform .3s cubic-bezier(.4,0,.2,1), color .15s;
-    }
-    .game-btn.open .chev { transform: rotate(180deg); color: var(--muted); }
-
-    .prices {
-      max-height: 0; overflow: hidden;
-      transition: max-height .36s cubic-bezier(.4,0,.2,1);
-      background: rgba(255,255,255,0.015);
-    }
-    .prices.open { max-height: 500px; }
-
-    .p-row {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 8px 20px 8px 28px;
-      border-bottom: 1px solid rgba(255,255,255,0.03);
-    }
-    .p-row:last-child { border-bottom: none; }
-    .p-tier { font-size: 13px; color: var(--muted); font-weight: 400; }
-    .p-val { font-size: 12.5px; color: var(--white); font-weight: 600; letter-spacing: 0.2px; }
-
-    /* ── DISCORD ── */
-    .disc-wrap { max-width: 1120px; margin: 0 auto; padding: 0 44px 104px; }
-    .disc-card {
-      background: var(--panel); border: 1px solid var(--border);
-      border-radius: 24px; padding: 56px 64px;
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 40px; flex-wrap: wrap; position: relative; overflow: hidden;
-    }
-    .disc-card::before {
-      content: ''; position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 55% 90% at 100% 50%, rgba(170, 140, 255, 0.09), transparent 65%),
-        radial-gradient(ellipse 40% 80% at 0% 50%, rgba(80, 200, 255, 0.06), transparent 65%);
-      pointer-events: none;
-    }
-    .disc-txt { position: relative; z-index: 1; }
-    .disc-txt .sec-h { margin-bottom: 10px; }
-    .disc-btn {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: var(--white); color: #000;
-      padding: 12px 26px; border-radius: 100px;
-      font-family: 'Sora', sans-serif;
-      font-size: 14px; font-weight: 600;
-      text-decoration: none; flex-shrink: 0; white-space: nowrap;
-      position: relative; z-index: 1;
-      transition: all .18s;
-    }
-    .disc-btn:hover {
-      background: #e4e4e4; transform: translateY(-2px);
-      box-shadow: 0 10px 26px rgba(255,255,255,0.12), 0 0 36px rgba(170, 140, 255, 0.18);
-    }
-    .disc-btn img { width: 18px; height: 18px; object-fit: contain; filter: invert(1); }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 32px 44px; max-width: 1120px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 14px;
-    }
-    .foot-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
-    .foot-logo img { width: 22px; height: 22px; object-fit: contain; border-radius: 50%; opacity: 0.4; }
-    .foot-logo span { font-size: 14px; font-weight: 600; color: var(--faint); }
-    .foot-copy { font-size: 12px; color: var(--faint); }
-    .foot-links { display: flex; gap: 20px; list-style: none; }
-    .foot-links a { font-size: 12.5px; color: var(--faint); text-decoration: none; transition: color .15s; }
-    .foot-links a:hover { color: var(--muted); }
-
-    ::-webkit-scrollbar { width: 5px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: #222; border-radius: 3px; }
-
-    @media(max-width:920px) {
-      .feat-grid { grid-template-columns: 1fr 1fr; }
-      nav { padding: 0 22px; }
-      .nav-links { display: none; }
-      .disc-card { padding: 36px 28px; flex-direction: column; }
-    }
-    @media(max-width:580px) {
-      .feat-grid { grid-template-columns: 1fr; }
-      .stats { flex-wrap: wrap; }
-      .s { border-right: none; border-bottom: 1px solid var(--border); min-width: 50%; }
-      .s:last-child { border-bottom: none; }
-      .container, .configs-sec .inner, .disc-wrap, footer { padding-left: 20px; padding-right: 20px; }
-      .hero { padding: 110px 20px 80px; }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-
-<div class="glows" aria-hidden="true">
-  <div class="glow glow-1"></div>
-  <div class="glow glow-2"></div>
-  <div class="glow glow-3"></div>
-  <div class="glow glow-4"></div>
-  <div class="glow glow-5"></div>
-</div>
 
 <nav>
   <a href="#" class="nav-logo">
@@ -436,7 +29,7 @@
 
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-chip"><span class="chip-dot"></span>Undetected</div>
+    <div class="hero-chip"><span class="chip-dot"></span>Undetected · v2.4.0</div>
     <img src="/assets/logo.png" alt="Bugware" class="hero-logo" onerror="this.style.display='none'" />
     <h1>Bugware <span>Configs</span></h1>
     <p class="hero-tagline">Handcrafted configs for every playstyle</p>
@@ -457,37 +50,37 @@
   <section class="sec" id="features">
     <div class="container">
       <div class="sec-tag">What we offer</div>
-      <div class="sec-h">Built For Serious Players</div>
+      <div class="sec-h">Built for serious players</div>
       <p class="sec-p">Every config is handcrafted and tested — not generated, not lazy, not shitfigs.</p>
 
       <div class="feat-grid">
         <div class="feat">
-          <div class="feat-ico"><img src="/assets/extras/precision_tuned.png" alt="" /></div>
+          <div class="feat-ico"><img src="/assets/extras/precision_tuned.png" alt="" onerror="this.style.display='none'" /></div>
           <div class="feat-t">Precision Tuned</div>
           <p class="feat-d">Each config is tested in real competitive scenarios. You get configs that actually perform.</p>
         </div>
         <div class="feat">
-          <div class="feat-ico"><img src="/assets/extras/every_playstyle.png" alt="" /></div>
+          <div class="feat-ico"><img src="/assets/extras/every_playstyle.png" alt="" onerror="this.style.display='none'" /></div>
           <div class="feat-t">Every Playstyle</div>
           <p class="feat-d">Legit, closet, semi-blatant, blatant — every type of config so you play how you want to.</p>
         </div>
         <div class="feat">
-          <div class="feat-ico"><img src="/assets/extras/multi_client.png" alt="" /></div>
+          <div class="feat-ico"><img src="/assets/extras/multi_client.png" alt="" onerror="this.style.display='none'" /></div>
           <div class="feat-t">Multi-Client</div>
           <p class="feat-d">Configs for Matcha, Matrix, Unnamed Enhancements, and more.</p>
         </div>
         <div class="feat">
-          <div class="feat-ico"><img src="/assets/extras/fast_delivery.png" alt="" /></div>
+          <div class="feat-ico"><img src="/assets/extras/fast_delivery.png" alt="" onerror="this.style.display='none'" /></div>
           <div class="feat-t">Fast Delivery</div>
-          <p class="feat-d">Fast delivery via our Discord support tickets. Buy a key, use instantly, receive your config via dms.</p>
+          <p class="feat-d">Fast delivery via our Discord support tickets. Buy a key, use instantly, receive your config via DMs.</p>
         </div>
         <div class="feat">
-          <div class="feat-ico"><img src="/assets/extras/regular_updates.png" alt="" /></div>
+          <div class="feat-ico"><img src="/assets/extras/regular_updates.png" alt="" onerror="this.style.display='none'" /></div>
           <div class="feat-t">Regular Updates</div>
           <p class="feat-d">Configs stay updated when patches drop. No manual work needed on your end.</p>
         </div>
         <div class="feat">
-          <div class="feat-ico"><img src="/assets/extras/dedicated_support.png" alt="" /></div>
+          <div class="feat-ico"><img src="/assets/extras/dedicated_support.png" alt="" onerror="this.style.display='none'" /></div>
           <div class="feat-t">Dedicated Support</div>
           <p class="feat-d">Our team is in Discord ready to help fine-tune settings to your sensitivity and setup.</p>
         </div>
@@ -497,7 +90,7 @@
 
   <!-- CONFIGS PRICING -->
   <section class="configs-sec" id="configs">
-    <div class="inner">
+    <div class="container">
       <div class="configs-head">
         <div class="sec-tag">Pricing</div>
         <div class="sec-h">Choose your config</div>
@@ -538,122 +131,6 @@
 
 </div>
 
-<script>
-  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  //  CONFIGURE YOUR PRICES HERE
-  //  Set any tier value to null to hide it for that game.
-  //  Add/remove objects inside `games` to add/remove games.
-  //  Add/remove objects inside PROGRAMS to add/remove clients.
-  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  const PROGRAMS = [
-    {
-      name: "Matcha",
-      games: [
-        {
-          name: "Rivals",
-          prices: {
-            "Legit":        "$5.00",
-            "Semi Legit":   "$5.00",
-            "Closet":       "$5.00",
-            "Semi Blatant": "$5.00",
-            "Blatant":      "$5.00",
-            "Config Pack":  "$18.00",
-          }
-        },
-      ]
-    },
-    {
-      name: "Matrix",
-      games: [
-        {
-          name: "Rivals Leaks",
-          prices: {
-            "Xorfee": "$5.00",
-            "Whaqo":  "$5.00",
-            "Iced":   "$5.00",
-            "Binkle": "$5.00",
-            "Ricky":  "$5.00",
-          }
-        },
-      ]
-    },
-    {
-      name: "Unnamed Enhancements",
-      games: [
-        {
-          name: "Rivals",
-          prices: {
-            "Rage":  "$10.00",
-            "Legit": "$5.00",
-          }
-        },
-      ]
-    },
-    {
-      name: "Kiciahook Premium",
-      games: [
-        {
-          name: "Rivals",
-          prices: {
-            "Rage":  "$10.00",
-            "Legit": "$5.00",
-          }
-        },
-      ]
-    },
-  ];
-
-  // ── RENDER ────────────────────────────────────────────────
-  const grid = document.getElementById('progGrid');
-
-  PROGRAMS.forEach(prog => {
-    const card = document.createElement('div');
-    card.className = 'prog';
-
-    const gameRows = prog.games.map(game => {
-      const rows = Object.entries(game.prices)
-        .filter(([, v]) => v !== null)
-        .map(([tier, price]) => `
-          <div class="p-row">
-            <span class="p-tier">${tier}</span>
-            <span class="p-val">${price}</span>
-          </div>
-        `).join('');
-
-      return `
-        <div class="game">
-          <button class="game-btn" onclick="toggle(this)">
-            ${game.name}
-            <svg class="chev" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          <div class="prices">${rows}</div>
-        </div>
-      `;
-    }).join('');
-
-    card.innerHTML = `
-      <div class="prog-head">
-        <span class="prog-name">${prog.name}</span>
-        <span class="prog-badge">Client</span>
-      </div>
-      <div class="games">${gameRows}</div>
-    `;
-
-    grid.appendChild(card);
-  });
-
-  function toggle(btn) {
-    const isOpen = btn.classList.contains('open');
-    const card = btn.closest('.prog');
-    card.querySelectorAll('.game-btn').forEach(b => b.classList.remove('open'));
-    card.querySelectorAll('.prices').forEach(p => p.classList.remove('open'));
-    if (!isOpen) {
-      btn.classList.add('open');
-      btn.nextElementSibling.classList.add('open');
-    }
-  }
-</script>
+<script src="/app.js"></script>
 </body>
 </html>
