@@ -19,6 +19,17 @@ const PROGRAMS = [
           "Config Pack":  "$18.00",
         }
       },
+      {
+        name: "Phantom Forces",
+        prices: {
+          "Legit":        "$5.00",
+          "Semi Legit":   "$5.00",
+          "Closet":       "$5.00",
+          "Semi Blatant": "$5.00",
+          "Blatant":      "$5.00",
+          "Config Pack":  "$18.00",
+        }
+      },
     ]
   },
   {
@@ -27,22 +38,26 @@ const PROGRAMS = [
       {
         name: "Rivals Leaks",
         prices: {
-          "Xorfee": "$5.00",
-          "Whaqo":  "$5.00",
-          "Iced":   "$5.00",
+          "1Xorfee": "$5.00",
+          "Airwu":  "$5.00",
+          "Whaqo": "$5.00",
           "Binkle": "$5.00",
-          "Ricky":  "$5.00",
+          "Ricky": "$5.00",
+          "Jynqs": "$5.00",
+          "Oduck": "$5.00",
+          "Akfla": "$5.00",
         }
       },
     ]
   },
   {
-    name: "Unnamed Enhancements",
+    name: "UE",
     games: [
       {
         name: "Rivals",
         prices: {
           "Rage":  "$10.00",
+          "Closet": "$5.00",
           "Legit": "$5.00",
         }
       },
@@ -56,6 +71,18 @@ const PROGRAMS = [
         prices: {
           "Rage":  "$10.00",
           "Legit": "$5.00",
+        }
+      },
+    ]
+  },
+  {
+    name: "Alt Generator",
+    games: [
+      {
+        name: "View Plans",
+        prices: {
+          "Lifetime": "$10.00",
+          "Monthly": "$5.00",
         }
       },
     ]
