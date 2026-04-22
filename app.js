@@ -30,6 +30,17 @@ const PROGRAMS = [
           "Config Pack": "$18.00",
         }
       }
+      {
+        "name": "Da Hood",
+        "prices": {
+          "Legit": "$5.00",
+          "Semi Legit": "$5.00",
+          "Closet": "$5.00",
+          "Semi Blatant": "$5.00",
+          "Blatant": "$5.00",
+          "Legit Silent": "$5.00"
+        }
+      },
     ]
   },
   {
