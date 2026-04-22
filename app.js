@@ -6,40 +6,40 @@
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 const PROGRAMS = [
   {
-    name: "Matcha",
-    games: [
+    "name": "Matcha",
+    "games": [
       {
-        name: "Rivals",
-        prices: {
-          "Legit":        "$5.00",
-          "Semi Legit":   "$5.00",
-          "Closet":       "$5.00",
+        "name": "Rivals",
+        "prices": {
+          "Legit": "$5.00",
+          "Semi Legit": "$5.00",
+          "Closet": "$5.00",
           "Semi Blatant": "$5.00",
-          "Blatant":      "$5.00",
-          "Config Pack":  "$18.00",
+          "Blatant": "$5.00",
+          "Config Pack": "$18.00",
         }
       },
       {
-        name: "Phantom Forces",
-        prices: {
-          "Legit":        "$5.00",
-          "Semi Legit":   "$5.00",
-          "Closet":       "$5.00",
+        "name": "Phantom Forces",
+        "prices": {
+          "Legit": "$5.00",
+          "Semi Legit": "$5.00",
+          "Closet": "$5.00",
           "Semi Blatant": "$5.00",
-          "Blatant":      "$5.00",
-          "Config Pack":  "$18.00",
+          "Blatant": "$5.00",
+          "Config Pack": "$18.00",
         }
-      },
+      }
     ]
   },
   {
-    name: "Matrix",
-    games: [
+    "name": "Matrix",
+    "games": [
       {
-        name: "Rivals Leaks",
-        prices: {
+        "name": "Rivals Leaks",
+        "prices": {
           "1Xorfee": "$5.00",
-          "Airwu":  "$5.00",
+          "Airwu": "$5.00",
           "Whaqo": "$5.00",
           "Binkle": "$5.00",
           "Ricky": "$5.00",
@@ -48,45 +48,69 @@ const PROGRAMS = [
           "Akfla": "$5.00",
         }
       },
-    ]
-  },
-  {
-    name: "UE",
-    games: [
       {
-        name: "Rivals",
-        prices: {
-          "Rage":  "$10.00",
+        "name": "Da Hood",
+        "prices": {
+          "Legit": "$5.00",
+          "Semi Legit": "$5.00",
           "Closet": "$5.00",
-          "Legit": "$5.00",
+          "Semi Blatant": "$5.00",
+          "Blatant": "$5.00",
+          "Legit Silent": "$5.00"
         }
       },
+      {
+        "name": "Phantom Forces",
+        "prices": {
+          "Legit": "$5.00",
+          "Semi Legit": "$5.00",
+          "Closet": "$5.00",
+          "Semi Blatant": "$5.00",
+          "Blatant": "$5.00",
+          "Legit Silent": "$5.00"
+        }
+      }
     ]
   },
   {
-    name: "Kiciahook Premium",
-    games: [
+    "name": "UE",
+    "games": [
       {
-        name: "Rivals",
-        prices: {
-          "Rage":  "$10.00",
-          "Legit": "$5.00",
+        "name": "Rivals",
+        "prices": {
+          "Rage": "$10.00",
+          "Closet": "$5.00",
+          "Legit": "$5.00"
         }
-      },
+      }
     ]
   },
   {
-    name: "Alt Generator",
-    games: [
+    "name": "Kiciahook Premium",
+    "games": [
       {
-        name: "View Plans",
-        prices: {
+        "name": "Rivals",
+        "prices": {
+          "Rage": "$10.00",
+          "Legit": "$5.00",
+          "Closet": "$5.00",
+          "Blatant": "5.00"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Alt Generator",
+    "games": [
+      {
+        "name": "View Plans",
+        "prices": {
           "Lifetime": "$10.00",
-          "Monthly": "$5.00",
+          "Monthly": "$5.00"
         }
-      },
+      }
     ]
-  },
+  }
 ];
 
 // ── RENDER ────────────────────────────────────────────────
