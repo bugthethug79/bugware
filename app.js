@@ -16,7 +16,7 @@ const PROGRAMS = [
           "Closet": "$5.00",
           "Semi Blatant": "$5.00",
           "Blatant": "$5.00",
-          "Config Pack": "$18.00",
+          "Config Pack": "$18.00"
         }
       },
       {
@@ -27,9 +27,9 @@ const PROGRAMS = [
           "Closet": "$5.00",
           "Semi Blatant": "$5.00",
           "Blatant": "$5.00",
-          "Config Pack": "$18.00",
+          "Config Pack": "$18.00"
         }
-      }
+      },
       {
         "name": "Da Hood",
         "prices": {
@@ -40,7 +40,7 @@ const PROGRAMS = [
           "Blatant": "$5.00",
           "Legit Silent": "$5.00"
         }
-      },
+      }
     ]
   },
   {
@@ -56,7 +56,7 @@ const PROGRAMS = [
           "Ricky": "$5.00",
           "Jynqs": "$5.00",
           "Oduck": "$5.00",
-          "Akfla": "$5.00",
+          "Akfla": "$5.00"
         }
       },
       {
@@ -139,7 +139,6 @@ const PROGRAMS = [
     ]
   }
 ];
-
 // ── RENDER ────────────────────────────────────────────────
 const grid = document.getElementById('progGrid');
 
