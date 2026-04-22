@@ -28,25 +28,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Animated topographic backdrop — slowly drifting, monotone */
+/* Animated topographic contour backdrop — thin lines, slowly drifting */
 body::after {
   content: '';
   position: fixed;
-  inset: -10% -10%;
-  background-image: url('/assets/topo.png');
+  inset: -5% -5%;
+  background-image: url('/assets/topo.svg');
   background-repeat: repeat;
-  background-size: 720px 720px;
+  background-size: 800px 800px;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.06;
-  filter: invert(1) grayscale(1) contrast(1.05);
-  mix-blend-mode: screen;
-  animation: topoDrift 60s linear infinite;
-  will-change: background-position;
+  opacity: 0.045;
+  animation: topoDrift 120s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
 }
 @keyframes topoDrift {
   from { background-position: 0 0; }
-  to   { background-position: 720px 720px; }
+  to   { background-position: 800px 800px; }
 }
 
 /* Single seamless monotone glow — same across the entire page */
