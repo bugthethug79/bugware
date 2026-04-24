@@ -45,6 +45,13 @@ const PROGRAMS = [
   },
 
   {
+    name: "Modern Client",
+    games: [
+      { name: "Rivals", prices: { Legit: "$5.00", "Semi Legit": "$5.00", Closet: "$5.00", "Semi Blatant": "$5.00", "Blatant": "$5.00" } }
+    ]
+  },
+
+  {
     name: "Alt Generator",
     games: [
       { name: "View Plans", prices: { Lifetime: "$10.00", Monthly: "$5.00" } }
