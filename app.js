@@ -7,202 +7,81 @@
 
 const PROGRAMS = [
   {
-    "name": "Matcha",
-    "games": [
-      {
-        "name": "Rivals",
-        "prices": {
-          "Legit": "$5.00",
-          "Semi Legit": "$5.00",
-          "Closet": "$5.00",
-          "Semi Blatant": "$5.00",
-          "Blatant": "$5.00",
-          "Config Pack": "$18.00"
-        }
-      },
-      {
-        "name": "Phantom Forces",
-        "prices": {
-          "Legit": "$5.00",
-          "Semi Legit": "$5.00",
-          "Closet": "$5.00",
-          "Semi Blatant": "$5.00",
-          "Blatant": "$5.00",
-          "Config Pack": "$18.00"
-        }
-      },
-      {
-        "name": "Da Hood",
-        "prices": {
-          "Legit": "$5.00",
-          "Semi Legit": "$5.00",
-          "Closet": "$5.00",
-          "Semi Blatant": "$5.00",
-          "Blatant": "$5.00",
-          "Legit Silent": "$5.00"
-        }
-      },
-      {
-        "name": "BloxStrike",
-        "prices": {
-          "Legit": "$5.00",
-          "Semi Legit": "$5.00",
-          "Closet": "$5.00",
-          "Semi Blatant": "$5.00",
-          "Blatant": "$5.00",
-          "Config Pack": "$18.00"
-        }
-      },
-      {
-        "name": "Operation One",
-        "prices": {
-          "Legit": "$5.00",
-          "Semi Legit": "$5.00",
-          "Closet": "$5.00",
-          "Semi Blatant": "$5.00",
-          "Blatant": "$5.00",
-          "Config Pack": "$18.00"
-        }
-      },
-      {
-        "name": "Sniper Duels",
-        "prices": {
-          "Legit": "$5.00",
-          "Semi Legit": "$5.00",
-          "Closet": "$5.00",
-          "Semi Blatant": "$5.00",
-          "Blatant": "$5.00",
-          "Config Pack": "$18.00"
-        }
-      },
-      {
-        "name": "Hypershot",
-        "prices": {
-          "Legit": "$5.00",
-          "Semi Legit": "$5.00",
-          "Closet": "$5.00",
-          "Semi Blatant": "$5.00",
-          "Blatant": "$5.00",
-          "Config Pack": "$18.00"
-        }
-      },
-      {
-        "name": "Criminality",
-        "prices": {
-          "Legit": "$5.00",
-          "Semi Legit": "$5.00",
-          "Closet": "$5.00",
-          "Semi Blatant": "$5.00",
-          "Blatant": "$5.00",
-          "Config Pack": "$18.00"
-        }
-      }
+    name: "Matcha",
+    games: [
+      { name: "Rivals", prices: { Legit: "$5.00", "Semi Legit": "$5.00", Closet: "$5.00", "Semi Blatant": "$5.00", Blatant: "$5.00", "Config Pack": "$18.00" } },
+      { name: "Phantom Forces", prices: { Legit: "$5.00", "Semi Legit": "$5.00", Closet: "$5.00", "Semi Blatant": "$5.00", Blatant: "$5.00", "Config Pack": "$18.00" } },
+      { name: "Da Hood", prices: { Legit: "$5.00", "Semi Legit": "$5.00", Closet: "$5.00", "Semi Blatant": "$5.00", Blatant: "$5.00", "Legit Silent": "$5.00" } },
+      { name: "BloxStrike", prices: { Legit: "$5.00", "Semi Legit": "$5.00", Closet: "$5.00", "Semi Blatant": "$5.00", Blatant: "$5.00", "Config Pack": "$18.00" } },
+      { name: "Operation One", prices: { Legit: "$5.00", "Semi Legit": "$5.00", Closet: "$5.00", "Semi Blatant": "$5.00", Blatant: "$5.00", "Config Pack": "$18.00" } },
+      { name: "Sniper Duels", prices: { Legit: "$5.00", "Semi Legit": "$5.00", Closet: "$5.00", "Semi Blatant": "$5.00", Blatant: "$5.00", "Config Pack": "$18.00" } },
+      { name: "Hypershot", prices: { Legit: "$5.00", "Semi Legit": "$5.00", Closet: "$5.00", "Semi Blatant": "$5.00", Blatant: "$5.00", "Config Pack": "$18.00" } },
+      { name: "Criminality", prices: { Legit: "$5.00", "Semi Legit": "$5.00", Closet: "$5.00", "Semi Blatant": "$5.00", Blatant: "$5.00", "Config Pack": "$18.00" } }
     ]
   },
+
   {
-    "name": "Matrix",
-    "games": [
-      {
-        "name": "Rivals Leaks",
-        "prices": {
-          "1Xorfee": "$5.00",
-          "Airwu": "$5.00",
-          "Whaqo": "$5.00",
-          "Binkle": "$5.00",
-          "Ricky": "$5.00",
-          "Jynqs": "$5.00",
-          "Oduck": "$5.00",
-          "Akfla": "$5.00"
-        }
-      },
-      {
-        "name": "Da Hood",
-        "prices": {
-          "Legit": "$5.00",
-          "Semi Legit": "$5.00",
-          "Closet": "$5.00",
-          "Semi Blatant": "$5.00",
-          "Blatant": "$5.00",
-          "Legit Silent": "$5.00"
-        }
-      },
-      {
-        "name": "Phantom Forces",
-        "prices": {
-          "Legit": "$5.00",
-          "Semi Legit": "$5.00",
-          "Closet": "$5.00",
-          "Semi Blatant": "$5.00",
-          "Blatant": "$5.00",
-          "Legit Silent": "$5.00"
-        }
-      },
-      {
-        "name": "Operation One",
-        "prices": {
-          "Legit": "$5.00",
-          "Semi Legit": "$5.00",
-          "Closet": "$5.00",
-          "Semi Blatant": "$5.00",
-          "Blatant": "$5.00",
-          "Config Pack": "$18.00"
-        }
-      }
+    name: "Matrix",
+    games: [
+      { name: "Rivals Leaks", prices: { "1Xorfee": "$5.00", Airwu: "$5.00", Whaqo: "$5.00", Binkle: "$5.00", Ricky: "$5.00", Jynqs: "$5.00", Oduck: "$5.00", Akfla: "$5.00" } },
+      { name: "Da Hood", prices: { Legit: "$5.00", "Semi Legit": "$5.00", Closet: "$5.00", "Semi Blatant": "$5.00", Blatant: "$5.00", "Legit Silent": "$5.00" } },
+      { name: "Phantom Forces", prices: { Legit: "$5.00", "Semi Legit": "$5.00", Closet: "$5.00", "Semi Blatant": "$5.00", Blatant: "$5.00", "Legit Silent": "$5.00" } },
+      { name: "Operation One", prices: { Legit: "$5.00", "Semi Legit": "$5.00", Closet: "$5.00", "Semi Blatant": "$5.00", Blatant: "$5.00", "Config Pack": "$18.00" } }
     ]
   },
+
   {
-    "name": "UE",
-    "games": [
-      {
-        "name": "Rivals",
-        "prices": {
-          "Rage": "$10.00",
-          "Closet": "$5.00",
-          "Legit": "$5.00"
-        }
-      }
+    name: "UE",
+    games: [
+      { name: "Rivals", prices: { Rage: "$10.00", Closet: "$5.00", Legit: "$5.00" } }
     ]
   },
+
   {
-    "name": "Kiciahook Premium",
-    "games": [
-      {
-        "name": "Rivals",
-        "prices": {
-          "Rage": "$10.00",
-          "Legit": "$5.00"
-        }
-      }
+    name: "Kiciahook Premium",
+    games: [
+      { name: "Rivals", prices: { Rage: "$10.00", Legit: "$5.00" } }
     ]
   },
+
   {
-    "name": "Alt Generator",
-    "games": [
-      {
-        "name": "View Plans",
-        "prices": {
-          "Lifetime": "$10.00",
-          "Monthly": "$5.00"
-        }
-      }
+    name: "Alt Generator",
+    games: [
+      { name: "View Plans", prices: { Lifetime: "$10.00", Monthly: "$5.00" } }
     ]
   },
+
   {
-    "name": "Scripts",
-    "games": [
-      {
-        "name": "Bugware Premium",
-        "prices": {
-          "Lifetime": "$10.00",
-          "Monthly": "$5.00"
-        }
-      },
-      {
-        "name": "Bugware Private",
-        "prices": {
-          "Lifetime": "Contact Staff"
-        }
-      }
+    name: "Scripts",
+    games: [
+      { name: "Bugware Premium", prices: { Lifetime: "$10.00", Monthly: "$5.00" } },
+      { name: "Bugware Private", prices: { Lifetime: "Contact Staff" } }
+    ]
+  },
+
+  {
+    name: "Lifetime Subs",
+    games: [
+      { name: "Netflix", prices: { Lifetime: "$5.00" } },
+      { name: "HBO Max", prices: { Lifetime: "$5.00" } },
+      { name: "NBA", prices: { Lifetime: "$5.00" } },
+      { name: "Crunchyroll", prices: { Lifetime: "$5.00" } },
+      { name: "Disney+", prices: { Lifetime: "$5.00" } },
+      { name: "Paramount+", prices: { Lifetime: "$5.00" } },
+      { name: "Spotify Premium", prices: { Lifetime: "$5.00" } },
+      { name: "NordVPN", prices: { Lifetime: "$5.00" } },
+      { name: "IP Vanish", prices: { Lifetime: "$5.00" } },
+      { name: "Mullvad VPN", prices: { Lifetime: "$5.00" } }
+    ]
+  },
+
+  {
+    name: "Discord Services",
+    games: [
+      { name: "14x Server Boost (1 Month)", prices: { Price: "$5.00" } },
+      { name: "14x Server Boost (3 Month)", prices: { Price: "$5.00" } },
+      { name: "Nitro Promo Code (1 Month)", prices: { Price: "$5.00" } },
+      { name: "Nitro Promo Code (3 Month)", prices: { Price: "$5.00" } }
     ]
   }
 ];
