@@ -1,6 +1,7 @@
 // ── PRODUCT CATALOG ─────────────────────────────────────
 // Each product has: slug, name, description, type, tag (optional badge),
 // gradient (CSS gradient string for the card accent), accentColor (hex),
+// image (optional path to product image for the banner/avatar),
 // and games[] with their prices tiers.
 // ─────────────────────────────────────────────────────────
 
@@ -13,6 +14,7 @@ const CATALOG = [
     tag: "UNDETECTED",
     gradient: "linear-gradient(135deg, #2d6a4f 0%, #1b4332 50%, #0a0a0a 100%)",
     accentColor: "#52b788",
+    image: null, // e.g. "assets/products/matcha.png"
     games: [
       { name: "Rivals", prices: { Legit: "$5.00", "Semi Legit": "$5.00", Closet: "$5.00", "Semi Blatant": "$5.00", Blatant: "$5.00", "Config Pack": "$18.00" } },
       { name: "Phantom Forces", prices: { Legit: "$5.00", "Semi Legit": "$5.00", Closet: "$5.00", "Semi Blatant": "$5.00", Blatant: "$5.00", "Config Pack": "$18.00" } },
@@ -32,6 +34,7 @@ const CATALOG = [
     tag: "UNDETECTED",
     gradient: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0a0a0a 100%)",
     accentColor: "#4cc9f0",
+    image: null,
     games: [
       { name: "Rivals Leaks", prices: { "1Xorfee": "$5.00", Airwu: "$5.00", Whaqo: "$5.00", Binkle: "$5.00", Ricky: "$5.00", Jynqs: "$5.00", Oduck: "$5.00", Akfla: "$5.00" } },
       { name: "Da Hood", prices: { Legit: "$5.00", "Semi Legit": "$5.00", Closet: "$5.00", "Semi Blatant": "$5.00", Blatant: "$5.00", "Legit Silent": "$5.00" } },
@@ -47,6 +50,7 @@ const CATALOG = [
     tag: "OP",
     gradient: "linear-gradient(135deg, #3a0ca3 0%, #240046 50%, #0a0a0a 100%)",
     accentColor: "#7b2ff7",
+    image: null,
     games: [
       { name: "Rivals", prices: { Rage: "$10.00", Closet: "$5.00", Legit: "$5.00" } }
     ]
@@ -59,6 +63,7 @@ const CATALOG = [
     tag: null,
     gradient: "linear-gradient(135deg, #7f0000 0%, #3d0000 50%, #0a0a0a 100%)",
     accentColor: "#e63946",
+    image: null,
     games: [
       { name: "Rivals", prices: { Rage: "$10.00", Legit: "$5.00" } }
     ]
@@ -71,6 +76,7 @@ const CATALOG = [
     tag: null,
     gradient: "linear-gradient(135deg, #0d3b66 0%, #051923 50%, #0a0a0a 100%)",
     accentColor: "#00b4d8",
+    image: null,
     games: [
       { name: "Rivals", prices: { Legit: "$5.00", "Semi Legit": "$5.00", Closet: "$5.00", "Semi Blatant": "$5.00", Blatant: "$5.00" } }
     ]
@@ -83,6 +89,7 @@ const CATALOG = [
     tag: "FREE ROBUX",
     gradient: "linear-gradient(135deg, #f77f00 0%, #7c3a00 50%, #0a0a0a 100%)",
     accentColor: "#f77f00",
+    image: null,
     games: [
       { name: "View Plans", prices: { Lifetime: "$10.00", Monthly: "$5.00" } }
     ]
@@ -95,6 +102,7 @@ const CATALOG = [
     tag: "OP",
     gradient: "linear-gradient(135deg, #212529 0%, #111111 50%, #0a0a0a 100%)",
     accentColor: "#adb5bd",
+    image: null,
     games: [
       { name: "Bugware Premium", prices: { Lifetime: "$10.00", Monthly: "$5.00" } },
       { name: "Bugware Private", prices: { Lifetime: "Contact Staff" } }
@@ -108,6 +116,7 @@ const CATALOG = [
     tag: "CHEAP",
     gradient: "linear-gradient(135deg, #23272a 0%, #5865f2 120%)",
     accentColor: "#5865f2",
+    image: null,
     games: [
       { name: "14x Server Boost (1 Month)", prices: { Price: "$5.00" } },
       { name: "14x Server Boost (3 Month)", prices: { Price: "$5.00" } },
