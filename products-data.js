@@ -12,8 +12,8 @@ const CATALOG = [
     description: "Premium configs for the most competitive Roblox titles. Tuned across every playstyle from full legit to blatant — includes Config Packs for power buyers.",
     type: "External",
     tag: "UNDETECTED",
-    gradient: "linear-gradient(135deg, #2d6a4f 0%, #1b4332 50%, #0a0a0a 100%)",
-    accentColor: "#52b788",
+    gradient: "linear-gradient(CBFC4E, #2d6a4f 0%, #CBFC4E 50%, #CBFC4E 100%)",
+    accentColor: "#CBFC4E",
     image: null, // e.g. "assets/products/matcha.png"
     games: [
       { name: "Rivals", prices: { Legit: "$5.00", "Semi Legit": "$5.00", Closet: "$5.00", "Semi Blatant": "$5.00", Blatant: "$5.00", "Config Pack": "$18.00" } },
