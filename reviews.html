@@ -1,53 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bugware — Reviews</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bugware — Vouches</title>
+
+  <meta property="og:title" content="Bugware — Vouches" />
+  <meta property="og:description" content="Honest feedback from real Bugware users." />
+  <meta property="og:image" content="/assets/banner.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bugware.cc/reviews" />
+
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo"><img src="logo.png" alt="Logo"></div>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="reviews.html">Reviews</a>
-            <a href="contact.html">Contact</a>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="assets/logo.png" alt="Bugware" onerror="this.style.display='none'" />
+    <span class="nav-logo-name">Bugware</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#features">Features</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="reviews.html">Vouches</a></li>
+    <li><a href="index.html#discord" class="nav-cta">Purchase</a></li>
+  </ul>
+</nav>
+
+<div class="wrap">
+
+  <!-- PAGE HEADER -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="page-hero-inner">
+        <div>
+          <div class="sec-tag">Vouches</div>
+          <h1 class="page-hero-h">What our customers say</h1>
+          <p class="sec-p">Honest feedback from real Bugware users.</p>
         </div>
-    </nav>
-    <div class="main-wrap" style="padding-top: 60px;">
-        <section class="hero">
-            <h1>What our customers say</h1>
-            <h2>Honest feedback from real Bugware users.</h2>
-        </section>
-        <section class="reviews">
-            <div class="reviews-head">
-                <div class="reviewsSummary">
-                    <p>Total Reviews: 10</p>
-                </div>
-            </div>
-            <div class="reviews-grid">
-                <div class="review-item">
-                    <h3>John Doe</h3>
-                    <p>Great product, highly recommend!</p>
-                </div>
-                <div class="review-item">
-                    <h3>Jane Smith</h3>
-                    <p>Excellent support and features!</p>
-                </div>
-                <!-- Add more reviews here -->
-            </div>
-        </section>
+        <div class="reviews-summary" id="reviewsSummary"></div>
+      </div>
     </div>
-    <footer>
-        <div class="footer-logo"><img src="logo.png" alt="Logo"></div>
-        <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="reviews.html">Reviews</a>
-            <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- REVIEWS GRID -->
+  <section class="sec" id="reviews" style="padding-top: 60px;">
+    <div class="container">
+      <div class="reviews-grid" id="reviewsGrid"></div>
+    </div>
+  </section>
+
+  <!-- DISCORD CTA -->
+  <div class="disc-wrap" id="discord">
+    <div class="disc-card">
+      <div class="disc-txt">
+        <div class="sec-tag">Community</div>
+        <div class="sec-h">Join our Discord</div>
+        <p class="sec-p">Purchase configs, get support, and connect with the Bugware community.</p>
+      </div>
+      <a href="https://discord.gg/WyMDtxhFyD" class="disc-btn">
+        <img src="assets/discord.png" alt="Discord" onerror="this.style.display='none'" />
+        Join the Server
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="index.html" class="foot-logo">
+      <img src="assets/logo.png" alt="Bugware" onerror="this.style.display='none'" />
+      <span>Bugware</span>
+    </a>
+    <span class="foot-copy">© 2025 Bugware. All rights reserved.</span>
+    <ul class="foot-links">
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="reviews.html">Vouches</a></li>
+      <li><a href="index.html#discord">Discord</a></li>
+    </ul>
+  </footer>
+
+</div>
+
+<script>
+const STAR_SRC = 'assets/extras/reviewstar.png';
+
+function renderStars(n, total = 5) {
+  let html = '';
+  for (let i = 0; i < total; i++) {
+    const filled = i < n ? 'filled' : 'empty';
+    html += `<img src="${STAR_SRC}" alt="" class="star ${filled}" onerror="this.style.display='none'" />`;
+  }
+  return html;
+}
+
+function escapeHTML(str) {
+  return String(str).replace(/[&<>"']/g, c => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[c]));
+}
+
+fetch('reviews.json', { cache: 'no-store' })
+  .then(r => r.json())
+  .then(data => {
+    const list = (data.reviews || []).filter(r => r && typeof r.rating === 'number');
+    const grid = document.getElementById('reviewsGrid');
+    const summary = document.getElementById('reviewsSummary');
+    if (!grid || !summary) return;
+
+    if (!list.length) {
+      summary.innerHTML = `<div class="rs-empty">No reviews yet.</div>`;
+      return;
+    }
+
+    const total = list.length;
+    const avg = list.reduce((s, r) => s + r.rating, 0) / total;
+    const avgRounded = Math.round(avg);
+
+    summary.innerHTML = `
+      <div class="rs-num">${avg.toFixed(1)}<span>/5</span></div>
+      <div class="rs-meta">
+        <div class="rs-stars">${renderStars(avgRounded)}</div>
+        <div class="rs-count">${total} ${total === 1 ? 'review' : 'reviews'}</div>
+      </div>
+    `;
+
+    grid.innerHTML = list.map(r => `
+      <div class="review">
+        <div class="review-head">
+          <span class="review-name">${escapeHTML(r.username || 'Anonymous')}</span>
+          <span class="review-stars">${renderStars(r.rating)}</span>
         </div>
-    </footer>
-    <script src="app.js"></script>
+        <p class="review-msg">${escapeHTML(r.message || '')}</p>
+      </div>
+    `).join('');
+  })
+  .catch(err => {
+    console.error('Failed to load reviews:', err);
+    const summary = document.getElementById('reviewsSummary');
+    if (summary) summary.innerHTML = `<div class="rs-empty">Reviews unavailable.</div>`;
+  });
+</script>
+
+<style>
+/* Page-specific additions for reviews.html */
+.page-hero {
+  padding: 140px 0 60px;
+  border-bottom: 1px solid var(--border);
+}
+.page-hero-h {
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -2px;
+  color: var(--white);
+  margin: 14px 0 16px;
+}
+.page-hero-inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .page-hero-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+</style>
+
 </body>
 </html>
