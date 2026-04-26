@@ -28,8 +28,8 @@ const CATALOG = [
     slug: "matrix",
     name: "Matrix",
     description: "Exclusive leaked configs and precision-tuned builds for Matrix. Includes rare leaked Rivals configs from top players.",
-    type: "UNDETECTED",
-    tag: null,
+    type: "EXTERNAL",
+    tag: "UNDETECTED",
     gradient: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0a0a0a 100%)",
     accentColor: "#4cc9f0",
     games: [
@@ -56,7 +56,7 @@ const CATALOG = [
     name: "Kiciahook Premium",
     description: "Professional Kiciahook configs. Rage and legit configs ready to be used.",
     type: "SCRIPT",
-    tag: "UPDATED",
+    tag: null,
     gradient: "linear-gradient(135deg, #7f0000 0%, #3d0000 50%, #0a0a0a 100%)",
     accentColor: "#e63946",
     games: [
@@ -78,9 +78,9 @@ const CATALOG = [
   {
     slug: "alt-generator",
     name: "Alt Generator",
-    description: "Instantly generate fresh Roblox alt accounts via the Bloxgen API. Flexible monthly and lifetime plans.",
+    description: "Instantly generate aged Roblox alt accounts. Accounts may have robux on them.",
     type: "Generator",
-    tag: "HOT",
+    tag: "FREE ROBUX",
     gradient: "linear-gradient(135deg, #f77f00 0%, #7c3a00 50%, #0a0a0a 100%)",
     accentColor: "#f77f00",
     games: [
