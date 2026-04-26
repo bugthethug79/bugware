@@ -9,8 +9,8 @@ const CATALOG = [
     slug: "matcha",
     name: "Matcha",
     description: "Premium configs for the most competitive Roblox titles. Tuned across every playstyle from full legit to blatant — includes Config Packs for power buyers.",
-    type: "Config Client",
-    tag: null,
+    type: "External",
+    tag: "UNDETECTED",
     gradient: "linear-gradient(135deg, #2d6a4f 0%, #1b4332 50%, #0a0a0a 100%)",
     accentColor: "#52b788",
     games: [
@@ -27,8 +27,8 @@ const CATALOG = [
   {
     slug: "matrix",
     name: "Matrix",
-    description: "Exclusive leaked configs and precision-tuned builds for Matrix. Includes rare Rivals leak configs from top players.",
-    type: "Config Client",
+    description: "Exclusive leaked configs and precision-tuned builds for Matrix. Includes rare leaked Rivals configs from top players.",
+    type: "UNDETECTED",
     tag: null,
     gradient: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0a0a0a 100%)",
     accentColor: "#4cc9f0",
@@ -42,9 +42,9 @@ const CATALOG = [
   {
     slug: "ue",
     name: "UE",
-    description: "Unnamed Enhancements configs built for Rivals. Covers closet to full rage — tuned for competitive play.",
-    type: "Config Client",
-    tag: null,
+    description: "Professionally-Made Unnamed Enhancements configs. Covers closet to full rage — made for competitive players.",
+    type: "SCRIPT",
+    tag: "OP",
     gradient: "linear-gradient(135deg, #3a0ca3 0%, #240046 50%, #0a0a0a 100%)",
     accentColor: "#7b2ff7",
     games: [
@@ -52,11 +52,11 @@ const CATALOG = [
     ]
   },
   {
-    slug: "kiciahook-premium",
+    slug: "kiciahook",
     name: "Kiciahook Premium",
-    description: "High-tier Kiciahook configs optimized for Rivals. Rage and legit builds ready to deploy.",
-    type: "Config Client",
-    tag: "PREMIUM",
+    description: "Professional Kiciahook configs. Rage and legit configs ready to be used.",
+    type: "SCRIPT",
+    tag: "UPDATED",
     gradient: "linear-gradient(135deg, #7f0000 0%, #3d0000 50%, #0a0a0a 100%)",
     accentColor: "#e63946",
     games: [
@@ -66,8 +66,8 @@ const CATALOG = [
   {
     slug: "modern-client",
     name: "Modern Client",
-    description: "Full-spectrum Rivals configs for Modern Client. Every playstyle from squeaky clean legit to blatant.",
-    type: "Config Client",
+    description: "Configs for Modern Client. Every playstyle from advanced legit configs to extremely blatant.",
+    type: "SCRIPT",
     tag: null,
     gradient: "linear-gradient(135deg, #0d3b66 0%, #051923 50%, #0a0a0a 100%)",
     accentColor: "#00b4d8",
@@ -91,8 +91,8 @@ const CATALOG = [
     slug: "scripts",
     name: "Scripts",
     description: "Bugware executor scripts — Premium for public access, Private for elite buyers. Lua-based, executor-ready.",
-    type: "Executor Script",
-    tag: "EXCLUSIVE",
+    type: "Script",
+    tag: "OP",
     gradient: "linear-gradient(135deg, #212529 0%, #111111 50%, #0a0a0a 100%)",
     accentColor: "#adb5bd",
     games: [
@@ -101,32 +101,11 @@ const CATALOG = [
     ]
   },
   {
-    slug: "lifetime-subs",
-    name: "Lifetime Subs",
-    description: "Lifetime subscription accounts for the most popular streaming, gaming, and VPN services — all at $5.",
-    type: "Account",
-    tag: null,
-    gradient: "linear-gradient(135deg, #4a0e8f 0%, #1a0533 50%, #0a0a0a 100%)",
-    accentColor: "#b48be4",
-    games: [
-      { name: "Netflix", prices: { Lifetime: "$5.00" } },
-      { name: "HBO Max", prices: { Lifetime: "$5.00" } },
-      { name: "NBA", prices: { Lifetime: "$5.00" } },
-      { name: "Crunchyroll", prices: { Lifetime: "$5.00" } },
-      { name: "Disney+", prices: { Lifetime: "$5.00" } },
-      { name: "Paramount+", prices: { Lifetime: "$5.00" } },
-      { name: "Spotify Premium", prices: { Lifetime: "$5.00" } },
-      { name: "NordVPN", prices: { Lifetime: "$5.00" } },
-      { name: "IP Vanish", prices: { Lifetime: "$5.00" } },
-      { name: "Mullvad VPN", prices: { Lifetime: "$5.00" } }
-    ]
-  },
-  {
     slug: "discord-services",
     name: "Discord Services",
-    description: "Server boosts and Nitro promo codes at unbeatable prices. Instant delivery via ticket.",
+    description: "Server boosts and Nitro promo codes at unbeatable prices. Delivery via ticket.",
     type: "Discord",
-    tag: null,
+    tag: "CHEAP",
     gradient: "linear-gradient(135deg, #23272a 0%, #5865f2 120%)",
     accentColor: "#5865f2",
     games: [
