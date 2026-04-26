@@ -48,33 +48,91 @@
     .product-card:hover {
       transform: translateY(-4px);
       border-color: var(--card-accent, rgba(255,255,255,0.15));
-      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.5);
     }
 
-    /* Gradient banner at top of card */
+    /* ── CARD BANNER ── */
     .card-banner {
-      height: 110px;
+      height: 120px;
       position: relative;
       overflow: hidden;
       flex-shrink: 0;
     }
+
+    /* Base gradient layer */
     .card-banner-bg {
       position: absolute;
       inset: 0;
       background: var(--card-gradient, var(--panel));
-      opacity: 0.9;
+      opacity: 0.95;
     }
-    /* Dot-grid texture overlay on banner */
-    .card-banner::after {
+
+    /* Noise texture via SVG filter */
+    .card-banner::before {
       content: '';
       position: absolute;
       inset: 0;
-      background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
-      background-size: 18px 18px;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+      background-size: 160px 160px;
+      opacity: 0.35;
       pointer-events: none;
+      z-index: 1;
+      mix-blend-mode: overlay;
     }
 
-    /* Tag badge (top-right of banner) */
+    /* Dot grid */
+    .card-banner-dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.13) 1px, transparent 1px);
+      background-size: 18px 18px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Diagonal stripe accent */
+    .card-banner-stripes {
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 18px,
+        rgba(255,255,255,0.025) 18px,
+        rgba(255,255,255,0.025) 19px
+      );
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Glow orb from accent color */
+    .card-banner-glow {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: var(--card-accent, rgba(255,255,255,0.2));
+      opacity: 0.18;
+      filter: blur(36px);
+      bottom: -30px;
+      right: -10px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Bottom fade into card body */
+    .card-banner-fade {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50px;
+      background: linear-gradient(to bottom, transparent, var(--panel));
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    /* Tag badge */
     .card-tag {
       position: absolute;
       top: 12px;
@@ -85,30 +143,51 @@
       text-transform: uppercase;
       padding: 4px 10px;
       border-radius: 100px;
-      background: rgba(255,255,255,0.12);
+      background: rgba(0,0,0,0.35);
       border: 1px solid rgba(255,255,255,0.18);
       color: #fff;
-      z-index: 2;
-      backdrop-filter: blur(6px);
+      z-index: 10;
+      backdrop-filter: blur(8px);
     }
 
-    /* Product initial / icon in banner */
-    .card-initial {
+    /* ── PRODUCT AVATAR (image or initial) ── */
+    .card-avatar {
       position: absolute;
-      bottom: 14px;
+      bottom: -18px;
       left: 20px;
-      font-size: 36px;
+      z-index: 10;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      border: 2px solid rgba(255,255,255,0.1);
+      overflow: hidden;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .card-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .card-avatar-initial {
+      font-size: 22px;
       font-weight: 800;
       color: rgba(255,255,255,0.9);
-      letter-spacing: -2px;
+      letter-spacing: -1px;
       line-height: 1;
-      z-index: 2;
-      text-shadow: 0 2px 16px rgba(0,0,0,0.4);
+      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      user-select: none;
     }
 
-    /* Card body */
+    /* Card body — needs top padding for the avatar overlap */
     .card-body {
-      padding: 20px 20px 18px;
+      padding: 28px 20px 18px;
       display: flex;
       flex-direction: column;
       flex: 1;
@@ -144,14 +223,12 @@
       margin-bottom: 18px;
     }
 
-    /* Divider */
     .card-divider {
       height: 1px;
       background: var(--border);
       margin: 0 0 16px;
     }
 
-    /* Footer row inside card */
     .card-footer {
       display: flex;
       align-items: center;
@@ -202,7 +279,6 @@
       transform: translateY(-1px);
     }
 
-    /* game count pill */
     .card-games-count {
       display: inline-flex;
       align-items: center;
@@ -222,9 +298,8 @@
 
     @media (max-width: 580px) {
       .products-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-      .card-body { padding: 14px 14px 14px; }
-      .card-banner { height: 80px; }
-      .card-initial { font-size: 28px; }
+      .card-body { padding: 24px 14px 14px; }
+      .card-banner { height: 90px; }
     }
     @media (max-width: 420px) {
       .products-grid { grid-template-columns: 1fr; }
@@ -310,11 +385,20 @@ CATALOG.forEach(product => {
   card.style.setProperty('--card-gradient', product.gradient);
   card.style.setProperty('--card-accent', product.accentColor);
 
+  // Avatar: image if defined, else initial letter
+  const avatarInner = product.image
+    ? `<img src="${product.image}" alt="${product.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><span class="card-avatar-initial" style="display:none">${initial}</span>`
+    : `<span class="card-avatar-initial">${initial}</span>`;
+
   card.innerHTML = `
     <div class="card-banner">
       <div class="card-banner-bg"></div>
+      <div class="card-banner-stripes"></div>
+      <div class="card-banner-dots"></div>
+      <div class="card-banner-glow"></div>
+      <div class="card-banner-fade"></div>
       ${product.tag ? `<div class="card-tag">${product.tag}</div>` : ''}
-      <div class="card-initial">${initial}</div>
+      <div class="card-avatar">${avatarInner}</div>
     </div>
     <div class="card-body">
       <div class="card-name">${product.name}</div>
