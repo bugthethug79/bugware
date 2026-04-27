@@ -116,7 +116,7 @@ const CATALOG = [
     tag: "CHEAP",
     gradient: "linear-gradient(135deg, #23272a 0%, #5865f2 120%)",
     accentColor: "#5865f2",
-    image: 'assets/extras/product logos/discord.png",
+    image: "assets/extras/product logos/discord.png",
     games: [
       { name: "14x Server Boost (1 Month)", prices: { Price: "$5.00" } },
       { name: "14x Server Boost (3 Month)", prices: { Price: "$5.00" } },
