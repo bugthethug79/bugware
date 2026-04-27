@@ -16,6 +16,30 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .page-hero {
+      padding: 140px 0 60px;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero-h {
+      font-size: clamp(36px, 5vw, 60px);
+      font-weight: 800;
+      line-height: 1.02;
+      letter-spacing: -2px;
+      color: var(--white);
+      margin: 14px 0 16px;
+    }
+    .page-hero-inner {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 640px) {
+      .page-hero-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
 </head>
 <body>
 
@@ -26,7 +50,7 @@
   </a>
   <ul class="nav-links">
     <li><a href="products.html">Products</a></li>
-    <li><a href="reviews.html">Reviews</a></li>
+    <li><a href="reviews.html" style="color:var(--white)">Reviews</a></li>
     <li><a href="index.html#discord" class="nav-cta">Discord</a></li>
   </ul>
 </nav>
@@ -145,36 +169,6 @@ fetch('reviews.json', { cache: 'no-store' })
     if (summary) summary.innerHTML = `<div class="rs-empty">Reviews unavailable.</div>`;
   });
 </script>
-
-<style>
-/* Page-specific additions for reviews.html */
-.page-hero {
-  padding: 140px 0 60px;
-  border-bottom: 1px solid var(--border);
-}
-.page-hero-h {
-  font-size: clamp(36px, 5vw, 60px);
-  font-weight: 800;
-  line-height: 1.02;
-  letter-spacing: -2px;
-  color: var(--white);
-  margin: 14px 0 16px;
-}
-.page-hero-inner {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 32px;
-  flex-wrap: wrap;
-}
-
-@media (max-width: 640px) {
-  .page-hero-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-</style>
 
 </body>
 </html>
