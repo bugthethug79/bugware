@@ -12,7 +12,7 @@ const CATALOG = [
     description: "Premium configs for the most competitive Roblox titles. Tuned across every playstyle from full legit to blatant — includes Config Packs for power buyers.",
     type: "External",
     tag: "UNDETECTED",
-    gradient: "linear-gradient(CBFC4E, #2d6a4f 0%, #CBFC4E 50%, #CBFC4E 100%)",
+    gradient: "linear-gradient(#CBFC4E, #2d6a4f 0%, #CBFC4E 50%, #CBFC4E 100%)",
     accentColor: "#CBFC4E",
     image: "assets/extras/product logos/matcha.png"
     games: [
