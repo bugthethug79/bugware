@@ -48,7 +48,7 @@ const CATALOG = [
     description: "Professionally-Made Unnamed Enhancements configs. Covers closet to full rage — made for competitive players.",
     type: "SCRIPT",
     tag: "OP",
-    gradient: "linear-gradient(135deg, #3a0ca3 0%, #240046 50%, #0a0a0a 100%)",
+    gradient: "background: linear-gradient(135deg, rgba(54, 23, 125, 0.18) 0%, rgba(38, 16, 90, 0.25) 25%, rgba(90, 60, 170, 0.15) 60%, rgba(210, 200, 245, 0.08) 100%); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border: 1px solid rgba(255, 255, 255, 0.18); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);",
     accentColor: "#7b2ff7",
     image: "assets/extras/product logos/UE.png",
     games: [
@@ -61,8 +61,8 @@ const CATALOG = [
     description: "Professional Kiciahook configs. Rage and legit configs ready to be used.",
     type: "SCRIPT",
     tag: null,
-    gradient: "linear-gradient(135deg, #7f0000 0%, #3d0000 50%, #0a0a0a 100%)",
-    accentColor: "#e63946",
+    gradient: "background: linear-gradient(135deg, rgba(0, 85, 255, 0.35) 0%, rgba(0, 40, 120, 0.55) 30%, rgba(0, 20, 60, 0.85) 65%, rgba(0, 0, 0, 1) 100%); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.08); box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 8px 30px rgba(0,0,0,0.6);",
+    accentColor: "#0055ff",
     image: "assets/extras/product logos/kiciahook.gif",
     games: [
       { name: "Rivals", prices: { Rage: "$10.00", Legit: "$5.00" } }
