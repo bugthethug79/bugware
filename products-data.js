@@ -12,7 +12,7 @@ const CATALOG = [
     description: "Premium configs for the most competitive Roblox titles. Tuned across every playstyle from full legit to blatant — includes Config Packs for power buyers.",
     type: "External",
     tag: "UNDETECTED",
-    gradient: "background: linear-gradient(135deg, rgba(95, 211, 132, 0.25) 0%, rgba(45, 106, 79, 0.4) 25%, rgba(134, 223, 164, 0.2) 60%, rgba(215, 244, 224, 0.05) 100%);",
+    gradient: "background: background: linear-gradient(135deg, rgba(95, 211, 132, 0.18) 0%, rgba(45, 106, 79, 0.25) 25%, rgba(134, 223, 164, 0.15) 60%, rgba(215, 244, 224, 0.08) 100%); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border: 1px solid rgba(255, 255, 255, 0.18); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15)",
     accentColor: "#5fd384",
     image: "assets/extras/product logos/matcha.png",
     games: [
