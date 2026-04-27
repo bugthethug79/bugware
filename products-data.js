@@ -74,8 +74,8 @@ const CATALOG = [
     description: "Configs for Modern Client. Every playstyle from advanced legit configs to extremely blatant.",
     type: "SCRIPT",
     tag: null,
-    gradient: "linear-gradient(135deg, #0d3b66 0%, #051923 50%, #0a0a0a 100%)",
-    accentColor: "#00b4d8",
+    gradient: "background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.05) 30%, rgba(255, 255, 255, 0.02) 65%, rgba(255, 255, 255, 0.01) 100%); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.12); box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 8px 30px rgba(0,0,0,0.6);",
+    accentColor: "#ffffff",
     image: "assets/extras/product logos/modern.png",
     games: [
       { name: "Rivals", prices: { Legit: "$5.00", "Semi Legit": "$5.00", Closet: "$5.00", "Semi Blatant": "$5.00", Blatant: "$5.00" } }
@@ -87,7 +87,7 @@ const CATALOG = [
     description: "Instantly generate aged Roblox alt accounts. Accounts may have robux on them.",
     type: "Generator",
     tag: "FREE ROBUX",
-    gradient: "linear-gradient(135deg, #f77f00 0%, #7c3a00 50%, #0a0a0a 100%)",
+    gradient: "background: linear-gradient(135deg, rgba(255, 123, 0, 0.25) 0%, rgba(180, 80, 0, 0.45) 30%, rgba(80, 35, 0, 0.75) 65%, rgba(0, 0, 0, 1) 100%); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.08); box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 8px 30px rgba(0,0,0,0.6);",
     accentColor: "#f77f00",
     image: "assets/extras/product logos/altgenerator.png",
     games: [
@@ -100,7 +100,7 @@ const CATALOG = [
     description: "Bugware executor scripts — Premium for public access, Private for elite buyers. Lua-based, executor-ready.",
     type: "Script",
     tag: "OP",
-    gradient: "linear-gradient(135deg, #212529 0%, #111111 50%, #0a0a0a 100%)",
+    gradient: "background: linear-gradient(135deg, rgba(211, 13, 13, 0.28) 0%, rgba(140, 10, 10, 0.5) 30%, rgba(60, 5, 5, 0.8) 65%, rgba(0, 0, 0, 1) 100%); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.08); box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 8px 30px rgba(0,0,0,0.6);",
     accentColor: "#adb5bd",
     image: "assets/extras/product logos/script.png",
     games: [
@@ -114,7 +114,7 @@ const CATALOG = [
     description: "Server boosts and Nitro promo codes at unbeatable prices. Delivery via ticket.",
     type: "Discord",
     tag: "CHEAP",
-    gradient: "linear-gradient(135deg, #23272a 0%, #5865f2 120%)",
+    gradient: "background: linear-gradient(135deg, rgba(88, 101, 242, 0.28) 0%, rgba(60, 70, 200, 0.5) 30%, rgba(25, 30, 90, 0.8) 65%, rgba(0, 0, 0, 1) 100%); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.08); box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 8px 30px rgba(0,0,0,0.6);",
     accentColor: "#5865f2",
     image: "assets/extras/product logos/discord.png",
     games: [
