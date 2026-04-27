@@ -14,7 +14,7 @@ const CATALOG = [
     tag: "UNDETECTED",
     gradient: "linear-gradient(#CBFC4E, #2d6a4f 0%, #CBFC4E 50%, #CBFC4E 100%)",
     accentColor: "#CBFC4E",
-    image: "assets/extras/product logos/matcha.png"
+    image: "assets/extras/product logos/matcha.png",
     games: [
       { name: "Rivals", prices: { Legit: "$5.00", "Semi Legit": "$5.00", Closet: "$5.00", "Semi Blatant": "$5.00", Blatant: "$5.00", "Config Pack": "$18.00" } },
       { name: "Phantom Forces", prices: { Legit: "$5.00", "Semi Legit": "$5.00", Closet: "$5.00", "Semi Blatant": "$5.00", Blatant: "$5.00", "Config Pack": "$18.00" } },
