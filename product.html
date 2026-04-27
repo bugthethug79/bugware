@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bugware — Products</title>
+  <title>Bugware — Product</title>
   <link rel="icon" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -244,14 +244,15 @@
       background: var(--panel);
       border: 1px solid var(--border);
       border-radius: 16px;
-      overflow: hidden;
+      overflow: visible; /* must be visible so avatar isn't clipped */
     }
 
-    /* ── PURCHASE CARD BANNER ── */
+    /* Inner wrapper that clips the banner only */
     .purchase-card-banner {
       height: 88px;
       position: relative;
       overflow: hidden;
+      border-radius: 16px 16px 0 0;
     }
     .purchase-card-banner-bg {
       position: absolute;
@@ -259,7 +260,6 @@
       background: var(--hero-gradient, var(--panel));
       opacity: 0.8;
     }
-    /* Dot grid overlay */
     .purchase-card-banner-dots {
       position: absolute;
       inset: 0;
@@ -268,7 +268,6 @@
       pointer-events: none;
       z-index: 1;
     }
-    /* Diagonal stripes */
     .purchase-card-banner-stripes {
       position: absolute;
       inset: 0;
@@ -282,7 +281,6 @@
       pointer-events: none;
       z-index: 1;
     }
-    /* Accent glow orb */
     .purchase-card-banner-glow {
       position: absolute;
       width: 100px;
@@ -296,32 +294,33 @@
       pointer-events: none;
       z-index: 1;
     }
-    /* Bottom fade */
     .purchase-card-banner::after {
       content: '';
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      bottom: 0; left: 0; right: 0;
       height: 36px;
       background: linear-gradient(to bottom, transparent, var(--panel));
       pointer-events: none;
       z-index: 2;
     }
-    /* Product avatar inside purchase card banner */
+
+    /* ── PURCHASE CARD AVATAR ──
+       Now a direct child of .purchase-card (position: sticky/relative),
+       NOT inside .purchase-card-banner, so it won't be clipped.
+    */
     .purchase-card-avatar {
       position: absolute;
-      bottom: -16px;
+      top: 64px; /* 88px banner - half avatar height to straddle the seam */
       left: 20px;
-      z-index: 10;
+      z-index: 20;
       width: 44px;
       height: 44px;
       border-radius: 11px;
-      border: 2px solid rgba(255,255,255,0.1);
+      border: 2px solid rgba(255,255,255,0.12);
       overflow: hidden;
-      background: rgba(0,0,0,0.45);
+      background: rgba(0,0,0,0.5);
       backdrop-filter: blur(6px);
-      box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.55);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -414,7 +413,6 @@
       transform: none;
       filter: none;
     }
-    /* Discord icon inside purchase button */
     .purchase-btn-icon {
       width: 16px;
       height: 16px;
@@ -511,7 +509,7 @@ if (!product) {
 } else {
   document.title = `Bugware — ${product.name}`;
 
-  const lightAccents = ['#f77f00','#b48be4','#adb5bd','#4cc9f0','#00b4d8','#52b788'];
+  const lightAccents = ['#f77f00','#b48be4','#adb5bd','#4cc9f0','#00b4d8','#52b788','#5fd384','#ffffff','#CBFC4E'];
   const btnTextColor = lightAccents.includes(product.accentColor) ? '#000' : '#fff';
 
   const priceRange = getPriceRange(product);
@@ -525,11 +523,12 @@ if (!product) {
 
   const initial = product.name.charAt(0).toUpperCase();
 
-  // Avatar for purchase card banner
+  // Avatar inner HTML (image with initial fallback)
   const purchaseAvatarInner = product.image
     ? `<img src="${product.image}" alt="${product.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><span class="purchase-card-avatar-initial" style="display:none">${initial}</span>`
     : `<span class="purchase-card-avatar-initial">${initial}</span>`;
 
+  // NOTE: .purchase-card-avatar is OUTSIDE .purchase-card-banner
   app.innerHTML = `
     <div class="product-hero">
       <div class="product-hero-bg"></div>
@@ -594,14 +593,14 @@ if (!product) {
         </div>
 
         <!-- RIGHT: sticky purchase card -->
-        <div class="purchase-card">
+        <div class="purchase-card" id="purchaseCard">
           <div class="purchase-card-banner">
             <div class="purchase-card-banner-bg"></div>
             <div class="purchase-card-banner-stripes"></div>
             <div class="purchase-card-banner-dots"></div>
             <div class="purchase-card-banner-glow"></div>
-            <div class="purchase-card-avatar">${purchaseAvatarInner}</div>
           </div>
+          <div class="purchase-card-avatar">${purchaseAvatarInner}</div>
           <div class="purchase-card-body">
             <div class="purchase-title">Purchase</div>
             <div class="purchase-selected" id="selectedLabel">Select a variant on the left to continue.</div>
@@ -637,31 +636,32 @@ if (!product) {
     ${renderFooter()}
   `;
 
-  // Apply CSS vars
-  document.querySelectorAll('.product-hero, .purchase-card').forEach(el => {
+  // Apply CSS vars to hero and purchase card banner
+  document.querySelectorAll('.product-hero, .purchase-card-banner').forEach(el => {
     el.style.setProperty('--hero-gradient', product.gradient);
     el.style.setProperty('--accent', product.accentColor);
   });
+  // Also set accent on the card itself for the radio buttons / labels
+  document.getElementById('purchaseCard').style.setProperty('--accent', product.accentColor);
 
   // Accent dot in hero meta
   document.querySelectorAll('.hero-meta-pill .dot').forEach((dot, i) => {
     if (i === 0) dot.style.background = product.accentColor;
   });
 
-  // Purchase card glow + btn
+  // Purchase card glow color
   const glow = document.querySelector('.purchase-card-banner-glow');
   if (glow) glow.style.background = product.accentColor;
 
-  document.querySelector('.purchase-btn').style.background = product.accentColor;
-  document.querySelector('.purchase-btn').style.color = btnTextColor;
+  // Purchase button styling
+  const btn = document.querySelector('.purchase-btn');
+  btn.style.background = product.accentColor;
+  btn.style.color = btnTextColor;
 
-  // Invert discord icon when button is light-colored
   const btnIcon = document.querySelector('.purchase-btn-icon');
-  if (btnIcon) {
-    btnIcon.style.filter = btnTextColor === '#000' ? 'invert(1)' : 'none';
-  }
+  if (btnIcon) btnIcon.style.filter = btnTextColor === '#000' ? 'invert(1)' : 'none';
 
-  // Feature check icons
+  // Feature check icon colors
   document.querySelectorAll('.purchase-feature svg').forEach(svg => {
     svg.style.color = product.accentColor;
   });
