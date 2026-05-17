@@ -97,9 +97,9 @@ const CATALOG = [
   {
     slug: "scripts",
     name: "Scripts",
-    description: "Bugware executor scripts — Premium for public access, Private for elite buyers. Lua-based, executor-ready.",
+    description: "Scripts and script addons branded with Bugware. Luau and LuaVM options available",
     type: "Script",
-    tag: "OP",
+    tag: "LUAU",
     gradient: "background: linear-gradient(135deg, rgba(211, 13, 13, 0.28) 0%, rgba(140, 10, 10, 0.5) 30%, rgba(60, 5, 5, 0.8) 65%, rgba(0, 0, 0, 1) 100%); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.08); box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 8px 30px rgba(0,0,0,0.6);",
     accentColor: "#adb5bd",
     image: "assets/extras/product logos/script.png",
@@ -109,19 +109,17 @@ const CATALOG = [
     ]
   },
   {
-    slug: "discord-services",
-    name: "Discord Services",
-    description: "Server boosts and Nitro promo codes at unbeatable prices. Delivery via ticket.",
-    type: "Discord",
-    tag: "CHEAP",
-    gradient: "background: linear-gradient(135deg, rgba(88, 101, 242, 0.28) 0%, rgba(60, 70, 200, 0.5) 30%, rgba(25, 30, 90, 0.8) 65%, rgba(0, 0, 0, 1) 100%); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.08); box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 8px 30px rgba(0,0,0,0.6);",
-    accentColor: "#5865f2",
-    image: "assets/extras/product logos/discord.png",
+    slug: "miscellaneous",
+    name: "Miscellaneous",
+    description: "Everything from PC optimizers to FastFlag Injectors",
+    type: "MISC",
+    tag: null,
+    gradient: "background: linear-gradient(135deg, rgba(255,255,255,0.35) 0%, rgba(220,220,220,0.5) 30%, rgba(120,120,120,0.8) 65%, rgba(0,0,0,1) 100%); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.08); box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 8px 30px rgba(0,0,0,0.6);",
+    accentColor: "#dcdcdc",
+    image: "assets/extras/product logos/tools.png",
     games: [
-      { name: "14x Server Boost (1 Month)", prices: { Price: "$5.00" } },
-      { name: "14x Server Boost (3 Month)", prices: { Price: "$5.00" } },
-      { name: "Nitro Promo Code (1 Month)", prices: { Price: "$5.00" } },
-      { name: "Nitro Promo Code (3 Month)", prices: { Price: "$5.00" } }
+      { name: "DOOMSDAY TOOL", prices: { Price: "$15.00" } },
+      { name: "Injware FFlag Injector", prices: { Price: "$10.00" } }
     ]
   }
 ];
