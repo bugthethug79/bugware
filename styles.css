@@ -476,20 +476,6 @@ body {
   border-color: rgba(255,255,255,0.12);
 }
 
-.pricing-tag {
-  display: inline-flex;
-  align-self: flex-start;
-  padding: 0.35rem 0.7rem;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid var(--border-color);
-  color: var(--text-secondary);
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 1rem;
-}
-
 .pricing-card h3 {
   font-size: 1.3rem;
   font-weight: 600;
