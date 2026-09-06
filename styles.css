@@ -76,6 +76,7 @@ body {
   border-radius: 4px;
   cursor: pointer;
   transition: all var(--ease-fast);
+  text-decoration: none;
 }
 
 .btn-primary:hover {
@@ -468,6 +469,13 @@ body {
   border-radius: 50%;
 }
 
+.scripts-section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
 .pricing-card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -543,6 +551,11 @@ body {
   align-items: center;
   text-decoration: none;
   width: fit-content;
+}
+
+.script-loader {
+  margin-top: auto;
+  width: 100%;
 }
 
 .mascot {

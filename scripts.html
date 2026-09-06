@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bugware | Scripts</title>
+  <link rel="icon" href="assets/icon.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html#top" class="brand">
+        <span class="brand-text">BUGWARE</span>
+      </a>
+      <div class="nav-menu">
+        <a href="index.html#top" class="nav-link">Overview</a>
+        <a href="index.html#market" class="nav-link">Configs</a>
+        <a href="scripts.html" class="nav-link active">Scripts</a>
+        <a href="index.html#institutional" class="nav-link">Services</a>
+        <a href="index.html#community" class="nav-link">Community</a>
+      </div>
+      <div class="nav-actions">
+        <a class="btn-secondary" href="scripts.html">Scripts</a>
+        <a class="btn-primary" href="https://discord.gg/WyMDtxhFyD">Join Discord</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="market-section scripts-page" id="scripts">
+      <div class="section-container">
+        <div class="section-header section-header--stack">
+          <h1 class="section-title">Scripts</h1>
+          <p class="section-desc">Free scripts and loaders from Bugware.</p>
+        </div>
+
+        <h2 class="scripts-section-title">Matcha Scripts</h2>
+        <div class="pricing-card-grid">
+          <article class="pricing-card pricing-card--featured">
+            <h3>Bugware Shake V1</h3>
+            <div class="pricing-price">$0.00</div>
+            <p>Legit mouse shake script for Matcha. Completely free, by Bugware. Completely free and open source, because why not? c:</p>
+            <button
+              class="btn-primary btn-lg pricing-button"
+              type="button"
+              data-copy-loader='loadstring(game:HttpGet("https://bugware.cc/scripts/shake.lua"))()'
+            >Copy Loader</button>
+          </article>
+
+          <article class="pricing-card">
+            <h3>Oasis-M</h3>
+            <div class="pricing-price">$25<span>.00 Lifetime</span></div>
+            <p>Matcha script hub by Bugware with lifetime access.</p>
+            <a href="https://discord.gg/WyMDtxhFyD" class="btn-secondary btn-lg pricing-button">Coming Soon</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
