@@ -41,7 +41,7 @@ local function shakeStep()
     local right = UI.GetValue("shake_right")
     local up = UI.GetValue("shake_up")
     local down = UI.GetValue("shake_down")
-    local centering = UI.GetValue("shake_centering") / 100 -- 0..1
+    local centering = UI.GetValue("shake_centering") / 100
     local rawX = randomFloat(-left, right)
     local rawY = randomFloat(-up, down)
     local dx = rawX - (driftX * centering)

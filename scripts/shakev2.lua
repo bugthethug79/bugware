@@ -1,6 +1,6 @@
 local RunService = game:GetService("RunService")
 
-local kb -- keybind widget, set inside the tab callback
+local kb
 
 local defaults = {
     on = false,
@@ -98,7 +98,6 @@ local function frand(a, b)
     return a + math.random() * (b - a)
 end
 
--- state for the shake generator
 local tx, ty = 0.0, 0.0
 local px, py = 0.0, 0.0
 local nextDir = 0.0
