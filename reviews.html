@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bugware | Reviews</title>
+    <meta name="description" content="Reviews and feedback from the Bugware community." />
+    <link rel="icon" href="assets/icon.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <a class="brand" href="index.html#top" aria-label="Bugware home">
+          <span>Bugware</span>
+        </a>
+
+        <nav class="menu" aria-label="Main navigation">
+          <a href="index.html#top">Home</a>
+          <a href="index.html#services">Services</a>
+          <a href="index.html#about">About</a>
+          <a href="scripts.html">Scripts</a>
+          <a href="reviews.html" class="active" aria-current="page">Reviews</a>
+        </nav>
+
+        <a class="button button-ghost" href="https://discord.gg/WyMDtxhFyD">Join Discord</a>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <section class="container reviews-page">
+        <div class="section-heading section-heading-left">
+          <p class="eyebrow">Community feedback</p>
+          <h1 class="page-title">Reviews</h1>
+          <p class="review-disclaimer">DISCLAIMER: This is a STATIC webpage, reviews may not be up-to-date.</p>
+        </div>
+
+        <div class="review-summary" aria-live="polite">
+          <div class="review-summary-score">
+            <span class="review-average" data-review-average>--</span>
+            <span class="review-stars" data-review-stars aria-hidden="true">★★★★★</span>
+          </div>
+          <p><span data-review-count>--</span> reviews</p>
+        </div>
+
+        <p class="review-status" data-review-status role="status">Loading reviews...</p>
+        <div class="review-grid" data-review-list></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
