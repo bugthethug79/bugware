@@ -527,7 +527,9 @@
         const avatar = document.createElement("span");
         avatar.className = "review-avatar";
         avatar.setAttribute("aria-hidden", "true");
-        avatar.textContent = review.username.charAt(0).toUpperCase();
+        // first real letter or digit; NFKC turns styled names like 𝖍𝖆𝖚𝖓𝖙𝖊𝖉 into plain "h"
+        const initial = [...review.username.normalize("NFKC")].find((c) => /[\p{L}\p{N}]/u.test(c));
+        avatar.textContent = (initial || "?").toUpperCase();
         const who = document.createElement("div");
         who.className = "review-who";
         const name = document.createElement("span");
