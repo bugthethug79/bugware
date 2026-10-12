@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>document.documentElement.classList.add("js");</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bugware | Reviews</title>
+    <meta name="description" content="Reviews and feedback from the Bugware community." />
+    <meta name="theme-color" content="#0b0a0e" />
+    <link rel="icon" href="assets/icon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DotGothic16&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="reviews">
+    <div class="lids" aria-hidden="true"><span class="lid lid-top"></span><span class="lid lid-bot"></span></div>
+    <div class="paws" aria-hidden="true" data-paws></div>
+
+    <header class="hud">
+      <a class="hud-brand" href="index.html" aria-label="Bugware home">
+        <img src="assets/icon.png" alt="" width="1536" height="1024" />
+        <span>bugware</span>
+      </a>
+      <nav class="hud-nav" aria-label="Main navigation" data-nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="scripts.html">Scripts</a>
+        <a href="reviews.html" aria-current="page">Reviews</a>
+        <a class="hud-nav-discord" href="https://discord.gg/WyMDtxhFyD" target="_blank" rel="noopener">Join Discord</a>
+      </nav>
+      <a class="tag tag-sm hud-discord" href="https://discord.gg/WyMDtxhFyD" target="_blank" rel="noopener"><span>Join Discord</span></a>
+      <button class="hud-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle><span></span><span></span></button>
+    </header>
+
+    <main id="top">
+      <section class="room room-short" data-room>
+        <canvas class="room-canvas" data-room-canvas aria-hidden="true"></canvas>
+        <div class="room-copy">
+          <p class="radio" data-radio>community feedback.</p>
+          <h1 class="room-title" data-duck aria-label="Real Buyers, Real Reviews.">Real Buyers, Real Reviews.</h1>
+          <p class="room-lead">What our buyers think about us.</p>
+        </div>
+      </section>
+
+      <section class="word wrap" aria-label="Reviews">
+        <aside class="score" data-reveal aria-live="polite">
+          <p class="kicker">overall</p>
+          <div class="score-big"><span data-review-average>?</span><small>/5</small></div>
+          <div class="eyes-rating" data-review-eyes aria-hidden="true"></div>
+          <p class="score-count"><span data-review-count>0</span> reviews</p>
+          <div class="dist" data-review-dist>
+            <div class="dist-row"><span>5</span><span class="dist-bar"><i></i></span><b>0</b></div>
+            <div class="dist-row"><span>4</span><span class="dist-bar"><i></i></span><b>0</b></div>
+            <div class="dist-row"><span>3</span><span class="dist-bar"><i></i></span><b>0</b></div>
+            <div class="dist-row"><span>2</span><span class="dist-bar"><i></i></span><b>0</b></div>
+            <div class="dist-row"><span>1</span><span class="dist-bar"><i></i></span><b>0</b></div>
+          </div>
+        </aside>
+
+        <div class="overheard">
+          <p class="disclaimer"><b>Disclaimer:</b> This is a STATIC webpage, reviews may not be up-to-date.</p>
+          <div class="review-tools">
+            <label class="field">
+              <span>sort</span>
+              <select data-review-sort>
+                <option value="file">File order</option>
+                <option value="high">Highest rated</option>
+                <option value="low">Lowest rated</option>
+              </select>
+            </label>
+            <label class="field field-grow">
+              <span>find</span>
+              <input type="search" placeholder="search reviews..." data-review-search />
+            </label>
+          </div>
+          <p class="review-status" data-review-status role="status">Listening in<span class="dots"></span></p>
+          <div class="review-list" data-review-list></div>
+          <p class="review-shown" data-review-shown></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="foot-row wrap">
+        <span>&copy; <span data-year>2026</span> Bugware &middot; nobody saw you here.</span>
+        <nav aria-label="Footer">
+          <a href="index.html">Home</a>
+          <a href="scripts.html">Scripts</a>
+          <a href="reviews.html">Reviews</a>
+          <a href="https://discord.gg/WyMDtxhFyD" target="_blank" rel="noopener">Discord</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="prowl.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>document.documentElement.classList.add("js");</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bugware</title>
+    <meta name="description" content="Bugware offers simple scripts, polished configs, and a straightforward community hub." />
+    <meta name="theme-color" content="#0b0a0e" />
+    <link rel="icon" href="assets/icon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DotGothic16&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="home">
+    <div class="lids" aria-hidden="true"><span class="lid lid-top"></span><span class="lid lid-bot"></span></div>
+    <div class="paws" aria-hidden="true" data-paws></div>
+
+    <header class="hud">
+      <a class="hud-brand" href="index.html" aria-label="Bugware home">
+        <img src="assets/icon.png" alt="" width="1536" height="1024" />
+        <span>bugware</span>
+      </a>
+      <nav class="hud-nav" aria-label="Main navigation" data-nav>
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="scripts.html">Scripts</a>
+        <a href="reviews.html">Reviews</a>
+        <a class="hud-nav-discord" href="https://discord.gg/WyMDtxhFyD" target="_blank" rel="noopener">Join Discord</a>
+      </nav>
+      <a class="tag tag-sm hud-discord" href="https://discord.gg/WyMDtxhFyD" target="_blank" rel="noopener"><span>Join Discord</span></a>
+      <button class="hud-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle><span></span><span></span></button>
+    </header>
+
+    <main id="top">
+      <!-- the dark room -->
+      <section class="room" data-room>
+        <canvas class="room-canvas" data-room-canvas aria-hidden="true"></canvas>
+        <p class="say" data-say data-text="Hello there, moderators."><span data-radio>Hello there, moderators.</span></p>
+        <div class="room-copy">
+          <h1 class="room-title" data-duck aria-label="Exploiting, with way more swag.">Exploiting, with way more swag.</h1>
+          <p class="room-sub">And way less detection.</p>
+          <p class="room-lead">
+            Bugware provides meticulously handcrafted configs for any type of competitive advantage you could want,
+            with a focus on clean, reliable setups and a smoother, more confident experience.
+          </p>
+          <div class="room-actions">
+            <a class="tag" href="#services"><span>Explore</span></a>
+            <a class="tag tag-ghost" href="scripts.html"><span>View scripts</span></a>
+          </div>
+        </div>
+      </section>
+
+      <div class="chatter" aria-hidden="true">
+        <div class="chatter-track">
+          <span>Free script loaders for Matcha</span>
+          <span>Premade configs, frequently updated</span>
+          <span>Custom configs built around your playstyle</span>
+          <span>Oasis-M &middot; lifetime access</span>
+          <span>Bypasses frame analysis checks</span>
+          <span>Community events on Discord</span>
+          <span>Free script loaders for Matcha</span>
+          <span>Premade configs, frequently updated</span>
+          <span>Custom configs built around your playstyle</span>
+          <span>Oasis-M &middot; lifetime access</span>
+          <span>Bypasses frame analysis checks</span>
+          <span>Community events on Discord</span>
+        </div>
+      </div>
+
+      <!-- field report -->
+      <section class="report wrap" aria-labelledby="report-title">
+        <h2 class="visually-hidden" id="report-title">Field report</h2>
+        <div class="lives" data-lives data-reveal>
+          <div class="lives-grid" aria-hidden="true" data-lives-grid></div>
+          <div class="lives-read"><b data-lives-num>0</b><small>/9 lives left</small></div>
+          <p class="lives-label">Nine lives, none spent. Detection stays at 0%.</p>
+        </div>
+
+        <ul class="facts">
+          <li class="fact" data-reveal>
+            <span class="fact-k">undetected in</span>
+            <span class="fact-big"><b data-count-to="10">0</b><b>+</b> <span class="unit">communities</span></span>
+            <span class="fact-v">Competitive communities where we're still undetected.</span>
+          </li>
+          <li class="fact" data-reveal>
+            <span class="fact-k">frame analysis</span>
+            <span class="fact-big fact-swap"><s>flagged</s> bypassed</span>
+            <span class="fact-v">Bypasses frame analysis checks.</span>
+          </li>
+          <li class="fact" data-reveal>
+            <span class="fact-k">clientele</span>
+            <span class="fact-big">confidential</span>
+            <span class="fact-v">Trusted by large influencers. We don't name names.</span>
+          </li>
+          <li class="fact" data-reveal>
+            <span class="fact-k">buyer rating</span>
+            <span class="fact-big" data-rating-big>new</span>
+            <span class="fact-v" data-rating-text><a class="arrow-link" href="reviews.html">See what buyers say</a></span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- services: shell game -->
+      <section class="hide wrap" id="services" aria-labelledby="services-title">
+        <header class="sec-head">
+          <p class="kicker">01 / services</p>
+          <h2 class="sec-title" id="services-title">Built for staying <em>undetected</em> in comp.</h2>
+          <p class="sec-note">Pick a box. Any box. Something's hiding under each one.</p>
+        </header>
+
+        <div class="boxes" data-shell>
+          <article class="slot">
+            <div class="box" data-box>
+              <span class="box-eyes" aria-hidden="true"><i></i><i></i></span>
+              <span class="box-body" aria-hidden="true"><span class="box-flap"></span><span class="box-tape"></span><span class="box-stamp">PREMADE</span></span>
+            </div>
+            <div class="slot-copy">
+              <span class="slot-n">01</span>
+              <h3>Premade Configs</h3>
+              <p>Frequently updated configs designed to keep quality high and setup straightforward.</p>
+              <a class="arrow-link" href="scripts.html">Browse the library</a>
+            </div>
+          </article>
+          <article class="slot">
+            <div class="box" data-box>
+              <span class="box-eyes" aria-hidden="true"><i></i><i></i></span>
+              <span class="box-body" aria-hidden="true"><span class="box-flap"></span><span class="box-tape"></span><span class="box-stamp">CUSTOM</span></span>
+            </div>
+            <div class="slot-copy">
+              <span class="slot-n">02</span>
+              <h3>Custom Configs</h3>
+              <p>For players who want a fully tailored setup built around their sensitivity and playstyle.</p>
+              <a class="arrow-link" href="https://discord.gg/WyMDtxhFyD" target="_blank" rel="noopener">Request one on Discord</a>
+            </div>
+          </article>
+          <article class="slot">
+            <div class="box" data-box>
+              <span class="box-eyes" aria-hidden="true"><i></i><i></i></span>
+              <span class="box-body" aria-hidden="true"><span class="box-flap"></span><span class="box-tape"></span><span class="box-stamp">COMMUNITY</span></span>
+            </div>
+            <div class="slot-copy">
+              <span class="slot-n">03</span>
+              <h3>Community</h3>
+              <p>A place to stay connected, share updates, and keep access to useful tools and events.</p>
+              <a class="arrow-link" href="https://discord.gg/WyMDtxhFyD" target="_blank" rel="noopener">Join the community</a>
+            </div>
+          </article>
+        </div>
+        <button class="shuffle" type="button" aria-label="Shuffle again" title="Shuffle again" data-shuffle>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h3.5c2 0 3.2.9 4.3 2.6l2.4 4.8c1.1 1.7 2.3 2.6 4.3 2.6H21M17.5 13.5 21 17l-3.5 3.5M3 17h3.5c1.5 0 2.5-.5 3.4-1.4M14.1 8.4C15 7.5 16 7 17.5 7H21M17.5 3.5 21 7l-3.5 3.5" /></svg>
+        </button>
+      </section>
+
+      <!-- about -->
+      <section class="about wrap" id="about" aria-labelledby="about-title">
+        <div class="about-top">
+          <header>
+            <p class="kicker">02 / about</p>
+            <h2 class="sec-title" id="about-title">Industry-leading configs, <span class="pink">for competitive players.</span></h2>
+          </header>
+          <div class="about-copy" data-reveal>
+            <p class="about-big">Ever wonder how these 'competitive' closet cheaters get so far without ever being caught? <mark>Yeah, you're welcome.</mark></p>
+            <p class="about-small">With Bugware's state-of-the-art industry-leading config creation technology, known as <em>'experience'</em>, we can ensure you stay undetected in your closet-cheating endeavours.</p>
+          </div>
+        </div>
+
+        <div class="why" data-why>
+          <div class="trail" aria-hidden="true" data-trail></div>
+          <ol class="why-list">
+            <li class="why-item">
+              <span class="why-n">01</span>
+              <h3>Free access</h3>
+              <p>Our config library uses a custom-made file browser with neat organization, for easy navigation and access to all of our configs.</p>
+            </li>
+            <li class="why-item">
+              <span class="why-n">02</span>
+              <h3>Paid access</h3>
+              <p>Our custom configs have proven useful time and time again, remaining undetected in numerous competitive communities.</p>
+            </li>
+            <li class="why-item">
+              <span class="why-n">03</span>
+              <h3>Keeping it simple</h3>
+              <p>There's no need to overcomplicate things; we focus on keeping you undetected, while maintaining quality config tuning.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- call to action -->
+      <section class="cta wrap" data-cta aria-labelledby="cta-title">
+        <div class="cta-panel">
+          <div class="cta-peek" aria-hidden="true"><img src="assets/icon.png" alt="" width="1536" height="1024" loading="lazy" /></div>
+          <p class="kicker">03 / get in</p>
+          <h2 class="sec-title" id="cta-title">Enhance your gameplay today.</h2>
+          <p class="cta-pun">The cutest way to <span>closet</span>.</p>
+          <div class="room-actions">
+            <a class="tag" href="scripts.html"><span>Browse scripts</span></a>
+            <a class="tag tag-ghost" href="https://discord.gg/WyMDtxhFyD" target="_blank" rel="noopener"><span>Join community</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="foot-row wrap">
+        <span>&copy; <span data-year>2026</span> Bugware &middot; nobody saw you here.</span>
+        <nav aria-label="Footer">
+          <a href="index.html">Home</a>
+          <a href="scripts.html">Scripts</a>
+          <a href="reviews.html">Reviews</a>
+          <a href="https://discord.gg/WyMDtxhFyD" target="_blank" rel="noopener">Discord</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="prowl.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
