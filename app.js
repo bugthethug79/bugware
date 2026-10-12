@@ -84,7 +84,7 @@
         const dx = e.clientX - lx;
         const dy = e.clientY - ly;
         acc += Math.hypot(dx, dy);
-        if (acc < 46) return;
+        if (acc < 120) return;
         acc = 0;
         const ang = Math.atan2(dy, dx);
         side *= -1;
