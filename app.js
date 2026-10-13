@@ -325,8 +325,14 @@
           return;
         }
         const avg = ratings.reduce((t, r) => t + r, 0) / ratings.length;
-        ratingBig.innerHTML = `<b>${avg.toFixed(1)}</b>/5`;
-        ratingText.firstElementChild.textContent = `Average across ${ratings.length} buyer review${ratings.length === 1 ? "" : "s"}`;
+        const pct = ((avg / 5) * 100).toFixed(1);
+        ratingBig.innerHTML = `<b>${pct}%</b>`;
+        const link = ratingText.firstElementChild;
+        link.textContent = "Read the reviews";
+        ratingText.replaceChildren(
+          "Insane swag plus good customer service. The math checks out. ",
+          link
+        );
       })
       .catch(() => {});
   }
@@ -555,7 +561,7 @@
     function summarize() {
       const count = reviews.length;
       const avg = count ? reviews.reduce((t, r) => t + r.rating, 0) / count : 0;
-      avgEl.textContent = count ? avg.toFixed(1) : "?";
+      avgEl.textContent = count ? ((avg / 5) * 100).toFixed(1) : "?";
       countEl.textContent = count;
       eyesEl.replaceChildren(...eyes(avg, false).childNodes);
       distRows.forEach((row) => {

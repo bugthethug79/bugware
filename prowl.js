@@ -474,7 +474,11 @@
       lights.forEach((l, i) => (l.a = Math.PI / 2 + (i - 1) * 0.35));
       draw();
     }
-    (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => {
+    // the graffiti font is only used on the canvas, so the browser won't fetch it unless asked
+    const fontsReady = document.fonts
+      ? Promise.all([document.fonts.load('16px "DotGothic16"', "Bugsawe was here").catch(() => {}), document.fonts.ready])
+      : Promise.resolve();
+    fontsReady.then(() => {
       layout();
       if (reduce) {
         lights.forEach((l, i) => (l.a = Math.PI / 2 + (i - 1) * 0.35));

@@ -22,7 +22,7 @@
 
   --display: "Dela Gothic One", "Arial Black", sans-serif;
   --body: "Zen Kaku Gothic New", "Segoe UI", sans-serif;
-  --hud: "DotGothic16", ui-monospace, Consolas, monospace;
+  --hud: "Zen Kaku Gothic New", "Segoe UI", sans-serif;
   --code: ui-monospace, "Cascadia Mono", Consolas, monospace;
 
   --gutter: clamp(16px, 4vw, 56px);
@@ -708,30 +708,6 @@ a {
   margin: 0 auto;
 }
 
-/* a searchlight band drifts across now and then */
-.lives-grid::after {
-  content: "";
-  position: absolute;
-  inset: -14px -30px;
-  pointer-events: none;
-  background: linear-gradient(105deg, transparent 42%, rgba(205, 214, 255, 0.13) 50%, transparent 58%) 120% 0 / 300% 100% no-repeat;
-  opacity: 0;
-}
-
-.lives.settled .lives-grid::after {
-  opacity: 1;
-  animation: sweep 5.2s ease-in-out infinite;
-}
-
-@keyframes sweep {
-  0% {
-    background-position: 120% 0;
-  }
-  60%,
-  100% {
-    background-position: -20% 0;
-  }
-}
 
 .life svg {
   display: block;
@@ -1287,6 +1263,207 @@ a {
   margin: 0;
   color: var(--skin-2);
   font-size: 16px;
+}
+
+/* ---------------------------------------------------------
+   pricing
+   --------------------------------------------------------- */
+
+.pricing {
+  padding-block: clamp(60px, 9vw, 120px);
+  border-top: 1px solid var(--line);
+}
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+.plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 26px 26px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--night-2);
+}
+
+.plan-featured {
+  border-color: var(--line-2);
+  border-top: 3px solid var(--eye);
+}
+
+/* the same rubber stamp as the cardboard boxes */
+.plan-stamp {
+  position: absolute;
+  top: -16px;
+  right: 20px;
+  padding: 4px 9px 2px;
+  border: 2px solid var(--eye);
+  background: var(--night-2);
+  font-family: var(--display);
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  color: var(--eye);
+  transform: rotate(-6deg);
+}
+
+/* price-list row: name, dotted leader, price */
+.plan-head {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.plan-name {
+  min-width: 0;
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.15;
+  color: var(--skin);
+}
+
+.plan-leader {
+  flex: 1;
+  min-width: 18px;
+  margin-bottom: 0.4em;
+  border-bottom: 2px dotted var(--line-2);
+}
+
+.plan-price {
+  flex: none;
+  font-family: var(--display);
+  font-size: 22px;
+  line-height: 1.15;
+  color: var(--eye);
+}
+
+.plan-desc {
+  margin: 12px 0 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--skin-2);
+}
+
+.plan-perks {
+  flex: 1;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  margin: 22px 0 28px;
+  padding: 0;
+  list-style: none;
+  font-size: 15px;
+  color: var(--skin-2);
+}
+
+.plan-perks li {
+  position: relative;
+  padding-left: 20px;
+  line-height: 1.45;
+}
+
+.plan-perks li::before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  background: var(--eye);
+  transform: rotate(45deg);
+}
+
+.plan-perks li.is-soon {
+  color: var(--muted);
+}
+
+.plan-perks li.is-soon::before {
+  background: none;
+  border: 1px solid var(--dim);
+}
+
+.soon {
+  margin-left: 6px;
+  padding: 1px 7px;
+  border: 1px dashed var(--line-2);
+  font-family: var(--hud);
+  font-size: 12px;
+  color: var(--skin-2);
+  white-space: nowrap;
+}
+
+.plan-cta {
+  justify-content: center;
+  width: 100%;
+}
+
+.pricing-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px 28px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.pay {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 20px;
+  font-family: var(--hud);
+}
+
+.pay-k {
+  font-size: 14px;
+  color: var(--ear);
+  letter-spacing: 0.04em;
+}
+
+.pay-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 15px;
+  color: var(--skin);
+}
+
+.pay-list li {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* same diamond divider as the chatter ticker */
+.pay-list li + li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  margin: 0 16px;
+  background: var(--eye);
+  transform: rotate(45deg);
+}
+
+@media (max-width: 960px) {
+  .plans {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    gap: 28px;
+  }
 }
 
 /* ---------------------------------------------------------
